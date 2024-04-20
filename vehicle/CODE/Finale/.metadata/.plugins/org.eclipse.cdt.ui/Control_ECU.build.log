@@ -1,0 +1,16 @@
+02:02:40 **** Incremental Build of configuration Debug for project Control_ECU ****
+make all 
+Building target: Control_ECU.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Control_ECU.map -mmcu=atmega32 -o "Control_ECU.elf"  ./MCAL/Timer.o ./MCAL/gpio.o ./MCAL/twi.o ./MCAL/uart.o  ./HAL/buzzer.o ./HAL/external_eeprom.o  ./APP/control.o  ./main.o   
+./APP/control.o: In function `start':
+../APP/control.c:16: undefined reference to `DcMotor_Init'
+../APP/control.c:12: undefined reference to `DcMotor_Rotate'
+../APP/control.c:20: undefined reference to `DcMotor_Rotate'
+../APP/control.c:20: undefined reference to `DcMotor_Rotate'
+../APP/control.c:20: undefined reference to `DcMotor_Rotate'
+make: *** [Control_ECU.elf] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+
+02:02:40 Build Failed. 6 errors, 0 warnings. (took 195ms)
+

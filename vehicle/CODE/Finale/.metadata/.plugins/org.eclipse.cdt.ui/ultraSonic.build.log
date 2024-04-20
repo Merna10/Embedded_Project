@@ -1,0 +1,43 @@
+19:41:47 **** Incremental Build of configuration Debug for project ultraSonic ****
+make all 
+Building file: ../HAL/LCD/lcd.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"HAL/LCD/lcd.d" -MT"HAL/LCD/lcd.o" -c -o "HAL/LCD/lcd.o" "../HAL/LCD/lcd.c"
+In file included from ../HAL/LCD/lcd.c:8:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../HAL/LCD/lcd.c: In function 'LCD_intgerToString':
+../HAL/LCD/lcd.c:161: warning: implicit declaration of function 'itoa'
+Finished building: ../HAL/LCD/lcd.c
+ 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+Finished building: ../main.c
+ 
+Building target: ultraSonic.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,ultraSonic.map -mmcu=atmega32 -o "ultraSonic.elf"  ./MCAL/ICU/icu.o  ./MCAL/GPIO/gpio.o  ./HAL/Ultrasonic/ultraSonic.o  ./HAL/LCD/lcd.o  ./main.o   
+Finished building target: ultraSonic.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S ultraSonic.elf  >"ultraSonic.lss"
+Finished building: ultraSonic.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 ultraSonic.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   12314 bytes (37.6% Full)
+(.text + .data + .bootloader)
+
+Data:        288 bytes (14.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+
+19:41:47 Build Finished. 0 errors, 2 warnings. (took 548ms)
+

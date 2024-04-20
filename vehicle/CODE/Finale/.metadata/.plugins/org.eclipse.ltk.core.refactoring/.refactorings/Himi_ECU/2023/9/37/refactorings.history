@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move &apos;dc_motor.c, dc_motor.h&apos; to &apos;HAL&apos;" description="Move 2 resources to &apos;HAL&apos;" destination="HAL" element1="/Control_ECU/HAL/dc_motor.c" element2="/Control_ECU/HAL/dc_motor.h" flags="7" id="org.eclipse.ltk.core.refactoring.move.resources" resources="2" stamp="1694476651526" updateReferences="true"/>
+</session>

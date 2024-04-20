@@ -1,0 +1,22 @@
+/*
+ * main.c
+ *
+ *  Created on: Nov 6, 2022
+ *      Author: merna
+ */
+
+#include "APP/control.h"
+
+
+
+int main(void){
+	start();
+	_delay_ms(50);
+	while(1){
+		tempERA();
+
+	}
+
+}
+
+

@@ -1,0 +1,53 @@
+02:02:42 **** Incremental Build of configuration Debug for project Himi_ECU ****
+make all 
+Building file: ../MCAL/Timer.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"MCAL/Timer.d" -MT"MCAL/Timer.o" -c -o "MCAL/Timer.o" "../MCAL/Timer.c"
+Finished building: ../MCAL/Timer.c
+ 
+Building file: ../MCAL/gpio.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"MCAL/gpio.d" -MT"MCAL/gpio.o" -c -o "MCAL/gpio.o" "../MCAL/gpio.c"
+Finished building: ../MCAL/gpio.c
+ 
+Building file: ../MCAL/uart.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"MCAL/uart.d" -MT"MCAL/uart.o" -c -o "MCAL/uart.o" "../MCAL/uart.c"
+Finished building: ../MCAL/uart.c
+ 
+Building file: ../HAL/dc_motor.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"HAL/dc_motor.d" -MT"HAL/dc_motor.o" -c -o "HAL/dc_motor.o" "../HAL/dc_motor.c"
+Finished building: ../HAL/dc_motor.c
+ 
+Building file: ../HAL/keypad.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"HAL/keypad.d" -MT"HAL/keypad.o" -c -o "HAL/keypad.o" "../HAL/keypad.c"
+Finished building: ../HAL/keypad.c
+ 
+Building file: ../HAL/lcd.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"HAL/lcd.d" -MT"HAL/lcd.o" -c -o "HAL/lcd.o" "../HAL/lcd.c"
+In file included from ../HAL/lcd.c:8:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../HAL/lcd.c: In function 'LCD_SendCommand':
+../HAL/lcd.c:53: warning: implicit declaration of function 'GET_BIT'
+../HAL/lcd.c: In function 'LCD_intgerToString':
+../HAL/lcd.c:161: warning: implicit declaration of function 'itoa'
+Finished building: ../HAL/lcd.c
+ 
+Building target: Himi_ECU.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Himi_ECU.map -mmcu=atmega32 -o "Himi_ECU.elf"  ./MCAL/Timer.o ./MCAL/gpio.o ./MCAL/uart.o  ./HAL/dc_motor.o ./HAL/keypad.o ./HAL/lcd.o  ./APP/hmi.o  ./main.o   
+./HAL/lcd.o: In function `LCD_clearScreen':
+../HAL/lcd.c:170: undefined reference to `GET_BIT'
+../HAL/lcd.c:170: undefined reference to `GET_BIT'
+../HAL/lcd.c:170: undefined reference to `GET_BIT'
+../HAL/lcd.c:170: undefined reference to `GET_BIT'
+../HAL/lcd.c:170: undefined reference to `GET_BIT'
+./HAL/lcd.o:../HAL/lcd.c:170: more undefined references to `GET_BIT' follow
+make: *** [Himi_ECU.elf] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+
+02:02:42 Build Failed. 7 errors, 3 warnings. (took 758ms)
+

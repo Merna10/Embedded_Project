@@ -1,0 +1,20 @@
+21:48:58 **** Incremental Build of configuration Debug for project stopWatch ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 stopWatch.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    5538 bytes (16.9% Full)
+(.text + .data + .bootloader)
+
+Data:         14 bytes (0.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+
+21:48:58 Build Finished. 0 errors, 0 warnings. (took 257ms)
+
