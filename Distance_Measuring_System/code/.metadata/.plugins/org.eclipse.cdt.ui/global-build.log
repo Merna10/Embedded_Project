@@ -1,0 +1,1684 @@
+23:52:07 **** Build of configuration Debug for project ultraSonic ****
+make all 
+Building file: ../gpio.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"gpio.d" -MT"gpio.o" -c -o "gpio.o" "../gpio.c"
+Finished building: ../gpio.c
+ 
+Building file: ../icu.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"icu.d" -MT"icu.o" -c -o "icu.o" "../icu.c"
+../icu.c: In function 'Icu_setCallBack':
+../icu.c:33: warning: function return types not compatible due to 'volatile'
+Finished building: ../icu.c
+ 
+Building file: ../lcd.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"lcd.d" -MT"lcd.o" -c -o "lcd.o" "../lcd.c"
+In file included from ../lcd.c:7:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../lcd.c: In function 'LCD_intgerToString':
+../lcd.c:158: warning: implicit declaration of function 'itoa'
+Finished building: ../lcd.c
+ 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+../main.c: In function 'main':
+../main.c:25: warning: passing argument 1 of 'LCD_DisplayChar' makes integer from pointer without a cast
+Finished building: ../main.c
+ 
+Building file: ../ultraSonic.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"ultraSonic.d" -MT"ultraSonic.o" -c -o "ultraSonic.o" "../ultraSonic.c"
+In file included from ../ultraSonic.c:11:
+c:/winavr-20100110/lib/gcc/../../avr/include/avr/delay.h:36:2: warning: #warning "This file has been moved to <util/delay.h>."
+In file included from c:/winavr-20100110/lib/gcc/../../avr/include/avr/delay.h:37,
+                 from ../ultraSonic.c:11:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../ultraSonic.c
+ 
+Building target: ultraSonic.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,ultraSonic.map -mmcu=atmega32 -o "ultraSonic.elf"  ./gpio.o ./icu.o ./lcd.o ./main.o ./ultraSonic.o   
+Finished building target: ultraSonic.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S ultraSonic.elf  >"ultraSonic.lss"
+Finished building: ultraSonic.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 ultraSonic.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    9584 bytes (29.2% Full)
+(.text + .data + .bootloader)
+
+Data:        286 bytes (14.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+23:53:08 **** Incremental Build of configuration Debug for project ultraSonic ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+Finished building: ../main.c
+ 
+Building target: ultraSonic.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,ultraSonic.map -mmcu=atmega32 -o "ultraSonic.elf"  ./gpio.o ./icu.o ./lcd.o ./main.o ./ultraSonic.o   
+Finished building target: ultraSonic.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S ultraSonic.elf  >"ultraSonic.lss"
+Finished building: ultraSonic.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 ultraSonic.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    9580 bytes (29.2% Full)
+(.text + .data + .bootloader)
+
+Data:        284 bytes (13.9% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+23:58:13 **** Incremental Build of configuration Debug for project ultraSonic ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+Finished building: ../main.c
+ 
+Building target: ultraSonic.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,ultraSonic.map -mmcu=atmega32 -o "ultraSonic.elf"  ./gpio.o ./icu.o ./lcd.o ./main.o ./ultraSonic.o   
+Finished building target: ultraSonic.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S ultraSonic.elf  >"ultraSonic.lss"
+Finished building: ultraSonic.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 ultraSonic.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    9580 bytes (29.2% Full)
+(.text + .data + .bootloader)
+
+Data:        284 bytes (13.9% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+00:02:02 **** Incremental Build of configuration Debug for project ultraSonic ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+Finished building: ../main.c
+ 
+Building file: ../ultraSonic.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"ultraSonic.d" -MT"ultraSonic.o" -c -o "ultraSonic.o" "../ultraSonic.c"
+In file included from ../ultraSonic.c:11:
+c:/winavr-20100110/lib/gcc/../../avr/include/avr/delay.h:36:2: warning: #warning "This file has been moved to <util/delay.h>."
+In file included from c:/winavr-20100110/lib/gcc/../../avr/include/avr/delay.h:37,
+                 from ../ultraSonic.c:11:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../ultraSonic.c
+ 
+Building target: ultraSonic.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,ultraSonic.map -mmcu=atmega32 -o "ultraSonic.elf"  ./gpio.o ./icu.o ./lcd.o ./main.o ./ultraSonic.o   
+Finished building target: ultraSonic.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S ultraSonic.elf  >"ultraSonic.lss"
+Finished building: ultraSonic.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 ultraSonic.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    9642 bytes (29.4% Full)
+(.text + .data + .bootloader)
+
+Data:        286 bytes (14.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+00:02:51 **** Incremental Build of configuration Debug for project ultraSonic ****
+make all 
+Building file: ../ultraSonic.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"ultraSonic.d" -MT"ultraSonic.o" -c -o "ultraSonic.o" "../ultraSonic.c"
+In file included from ../ultraSonic.c:11:
+c:/winavr-20100110/lib/gcc/../../avr/include/avr/delay.h:36:2: warning: #warning "This file has been moved to <util/delay.h>."
+In file included from c:/winavr-20100110/lib/gcc/../../avr/include/avr/delay.h:37,
+                 from ../ultraSonic.c:11:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../ultraSonic.c
+ 
+Building target: ultraSonic.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,ultraSonic.map -mmcu=atmega32 -o "ultraSonic.elf"  ./gpio.o ./icu.o ./lcd.o ./main.o ./ultraSonic.o   
+Finished building target: ultraSonic.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S ultraSonic.elf  >"ultraSonic.lss"
+Finished building: ultraSonic.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 ultraSonic.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    9580 bytes (29.2% Full)
+(.text + .data + .bootloader)
+
+Data:        284 bytes (13.9% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+00:05:03 **** Incremental Build of configuration Debug for project ultraSonic ****
+make all 
+Building file: ../gpio.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"gpio.d" -MT"gpio.o" -c -o "gpio.o" "../gpio.c"
+Finished building: ../gpio.c
+ 
+Building file: ../icu.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"icu.d" -MT"icu.o" -c -o "icu.o" "../icu.c"
+../icu.c: In function 'Icu_setCallBack':
+../icu.c:33: warning: function return types not compatible due to 'volatile'
+Finished building: ../icu.c
+ 
+Building file: ../lcd.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"lcd.d" -MT"lcd.o" -c -o "lcd.o" "../lcd.c"
+In file included from ../lcd.c:7:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../lcd.c: In function 'LCD_intgerToString':
+../lcd.c:158: warning: implicit declaration of function 'itoa'
+Finished building: ../lcd.c
+ 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+Finished building: ../main.c
+ 
+Building file: ../ultraSonic.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"ultraSonic.d" -MT"ultraSonic.o" -c -o "ultraSonic.o" "../ultraSonic.c"
+In file included from ../ultraSonic.c:11:
+c:/winavr-20100110/lib/gcc/../../avr/include/avr/delay.h:36:2: warning: #warning "This file has been moved to <util/delay.h>."
+In file included from c:/winavr-20100110/lib/gcc/../../avr/include/avr/delay.h:37,
+                 from ../ultraSonic.c:11:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../ultraSonic.c
+ 
+Building target: ultraSonic.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,ultraSonic.map -mmcu=atmega32 -o "ultraSonic.elf"  ./gpio.o ./icu.o ./lcd.o ./main.o ./ultraSonic.o   
+Finished building target: ultraSonic.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S ultraSonic.elf  >"ultraSonic.lss"
+Finished building: ultraSonic.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 ultraSonic.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    9580 bytes (29.2% Full)
+(.text + .data + .bootloader)
+
+Data:        284 bytes (13.9% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+00:05:55 **** Incremental Build of configuration Debug for project ultraSonic ****
+make all 
+Building file: ../icu.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"icu.d" -MT"icu.o" -c -o "icu.o" "../icu.c"
+../icu.c: In function 'Icu_setCallBack':
+../icu.c:34: warning: function return types not compatible due to 'volatile'
+Finished building: ../icu.c
+ 
+Building target: ultraSonic.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,ultraSonic.map -mmcu=atmega32 -o "ultraSonic.elf"  ./gpio.o ./icu.o ./lcd.o ./main.o ./ultraSonic.o   
+Finished building target: ultraSonic.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S ultraSonic.elf  >"ultraSonic.lss"
+Finished building: ultraSonic.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 ultraSonic.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    9580 bytes (29.2% Full)
+(.text + .data + .bootloader)
+
+Data:        284 bytes (13.9% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+00:06:04 **** Incremental Build of configuration Debug for project ultraSonic ****
+make all 
+Building file: ../icu.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"icu.d" -MT"icu.o" -c -o "icu.o" "../icu.c"
+../icu.c: In function 'Icu_setCallBack':
+../icu.c:33: warning: function return types not compatible due to 'volatile'
+Finished building: ../icu.c
+ 
+Building target: ultraSonic.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,ultraSonic.map -mmcu=atmega32 -o "ultraSonic.elf"  ./gpio.o ./icu.o ./lcd.o ./main.o ./ultraSonic.o   
+Finished building target: ultraSonic.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S ultraSonic.elf  >"ultraSonic.lss"
+Finished building: ultraSonic.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 ultraSonic.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    9580 bytes (29.2% Full)
+(.text + .data + .bootloader)
+
+Data:        284 bytes (13.9% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+00:08:34 **** Build of configuration Debug for project r ****
+make all 
+Building file: ../MCAL/ICU/icu.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"MCAL/ICU/icu.d" -MT"MCAL/ICU/icu.o" -c -o "MCAL/ICU/icu.o" "../MCAL/ICU/icu.c"
+../MCAL/ICU/icu.c: In function 'Icu_setCallBack':
+../MCAL/ICU/icu.c:81: warning: function return types not compatible due to 'volatile'
+Finished building: ../MCAL/ICU/icu.c
+ 
+Building file: ../MCAL/GPIO/gpio.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"MCAL/GPIO/gpio.d" -MT"MCAL/GPIO/gpio.o" -c -o "MCAL/GPIO/gpio.o" "../MCAL/GPIO/gpio.c"
+Finished building: ../MCAL/GPIO/gpio.c
+ 
+Building file: ../HAL/Ultrasonic/ultrasonic.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"HAL/Ultrasonic/ultrasonic.d" -MT"HAL/Ultrasonic/ultrasonic.o" -c -o "HAL/Ultrasonic/ultrasonic.o" "../HAL/Ultrasonic/ultrasonic.c"
+In file included from ../HAL/Ultrasonic/ultrasonic.c:12:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../HAL/Ultrasonic/ultrasonic.c
+ 
+Building file: ../HAL/LCD/lcd.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"HAL/LCD/lcd.d" -MT"HAL/LCD/lcd.o" -c -o "HAL/LCD/lcd.o" "../HAL/LCD/lcd.c"
+In file included from ../HAL/LCD/lcd.c:13:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../HAL/LCD/lcd.c
+ 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:13:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../main.c
+ 
+Building target: r.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,r.map -mmcu=atmega32 -o "r.elf"  ./MCAL/ICU/icu.o  ./MCAL/GPIO/gpio.o  ./HAL/Ultrasonic/ultrasonic.o  ./HAL/LCD/lcd.o  ./main.o   
+Finished building target: r.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S r.elf  >"r.lss"
+Finished building: r.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 r.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    9894 bytes (30.2% Full)
+(.text + .data + .bootloader)
+
+Data:        288 bytes (14.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+00:08:35 **** Incremental Build of configuration Debug for project ultraSonic ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 ultraSonic.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    9580 bytes (29.2% Full)
+(.text + .data + .bootloader)
+
+Data:        284 bytes (13.9% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+00:14:54 **** Incremental Build of configuration Debug for project r ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 r.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    9894 bytes (30.2% Full)
+(.text + .data + .bootloader)
+
+Data:        288 bytes (14.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+00:14:54 **** Incremental Build of configuration Debug for project ultraSonic ****
+make all 
+Building file: ../lcd.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"lcd.d" -MT"lcd.o" -c -o "lcd.o" "../lcd.c"
+In file included from ../lcd.c:7:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../lcd.c: In function 'LCD_intgerToString':
+../lcd.c:158: warning: implicit declaration of function 'itoa'
+Finished building: ../lcd.c
+ 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+Finished building: ../main.c
+ 
+Building target: ultraSonic.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,ultraSonic.map -mmcu=atmega32 -o "ultraSonic.elf"  ./gpio.o ./icu.o ./lcd.o ./main.o ./ultraSonic.o   
+Finished building target: ultraSonic.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S ultraSonic.elf  >"ultraSonic.lss"
+Finished building: ultraSonic.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 ultraSonic.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    9580 bytes (29.2% Full)
+(.text + .data + .bootloader)
+
+Data:        284 bytes (13.9% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+00:16:19 **** Incremental Build of configuration Debug for project r ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 r.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    9894 bytes (30.2% Full)
+(.text + .data + .bootloader)
+
+Data:        288 bytes (14.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+00:16:19 **** Incremental Build of configuration Debug for project ultraSonic ****
+make all 
+Building file: ../lcd.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"lcd.d" -MT"lcd.o" -c -o "lcd.o" "../lcd.c"
+In file included from ../lcd.c:7:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../lcd.c: In function 'LCD_intgerToString':
+../lcd.c:158: warning: implicit declaration of function 'itoa'
+Finished building: ../lcd.c
+ 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+Finished building: ../main.c
+ 
+Building target: ultraSonic.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,ultraSonic.map -mmcu=atmega32 -o "ultraSonic.elf"  ./gpio.o ./icu.o ./lcd.o ./main.o ./ultraSonic.o   
+Finished building target: ultraSonic.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S ultraSonic.elf  >"ultraSonic.lss"
+Finished building: ultraSonic.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 ultraSonic.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    9580 bytes (29.2% Full)
+(.text + .data + .bootloader)
+
+Data:        284 bytes (13.9% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+00:21:57 **** Build of configuration Debug for project US ****
+make all 
+Building file: ../gpio.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"gpio.d" -MT"gpio.o" -c -o "gpio.o" "../gpio.c"
+Finished building: ../gpio.c
+ 
+Building file: ../lcd.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"lcd.d" -MT"lcd.o" -c -o "lcd.o" "../lcd.c"
+In file included from ../lcd.c:7:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../lcd.c: In function 'LCD_intgerToString':
+../lcd.c:158: warning: implicit declaration of function 'itoa'
+Finished building: ../lcd.c
+ 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+../main.c: In function 'main':
+../main.c:12: warning: unused variable 'distance'
+Finished building: ../main.c
+ 
+Building target: US.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,US.map -mmcu=atmega32 -o "US.elf"  ./gpio.o ./lcd.o ./main.o   
+Finished building target: US.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S US.elf  >"US.lss"
+Finished building: US.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 US.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    7498 bytes (22.9% Full)
+(.text + .data + .bootloader)
+
+Data:         24 bytes (1.2% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+00:21:58 **** Incremental Build of configuration Debug for project r ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 r.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    9894 bytes (30.2% Full)
+(.text + .data + .bootloader)
+
+Data:        288 bytes (14.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+00:21:59 **** Incremental Build of configuration Debug for project ultraSonic ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 ultraSonic.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    9580 bytes (29.2% Full)
+(.text + .data + .bootloader)
+
+Data:        284 bytes (13.9% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+00:23:48 **** Incremental Build of configuration Debug for project US ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 US.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    7498 bytes (22.9% Full)
+(.text + .data + .bootloader)
+
+Data:         24 bytes (1.2% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+00:23:48 **** Incremental Build of configuration Debug for project r ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 r.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    9894 bytes (30.2% Full)
+(.text + .data + .bootloader)
+
+Data:        288 bytes (14.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+00:23:49 **** Incremental Build of configuration Debug for project ultraSonic ****
+make all 
+Building file: ../lcd.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"lcd.d" -MT"lcd.o" -c -o "lcd.o" "../lcd.c"
+In file included from ../lcd.c:7:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../lcd.c: In function 'LCD_intgerToString':
+../lcd.c:158: warning: implicit declaration of function 'itoa'
+Finished building: ../lcd.c
+ 
+Building target: ultraSonic.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,ultraSonic.map -mmcu=atmega32 -o "ultraSonic.elf"  ./gpio.o ./icu.o ./lcd.o ./main.o ./ultraSonic.o   
+Finished building target: ultraSonic.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S ultraSonic.elf  >"ultraSonic.lss"
+Finished building: ultraSonic.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 ultraSonic.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    9580 bytes (29.2% Full)
+(.text + .data + .bootloader)
+
+Data:        284 bytes (13.9% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+00:24:52 **** Incremental Build of configuration Debug for project US ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 US.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    7498 bytes (22.9% Full)
+(.text + .data + .bootloader)
+
+Data:         24 bytes (1.2% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+00:24:53 **** Incremental Build of configuration Debug for project r ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 r.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    9894 bytes (30.2% Full)
+(.text + .data + .bootloader)
+
+Data:        288 bytes (14.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+00:24:53 **** Incremental Build of configuration Debug for project ultraSonic ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 ultraSonic.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    9580 bytes (29.2% Full)
+(.text + .data + .bootloader)
+
+Data:        284 bytes (13.9% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+00:25:47 **** Incremental Build of configuration Debug for project ultraSonic ****
+make all 
+Building file: ../ultraSonic.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"ultraSonic.d" -MT"ultraSonic.o" -c -o "ultraSonic.o" "../ultraSonic.c"
+In file included from ../ultraSonic.c:11:
+c:/winavr-20100110/lib/gcc/../../avr/include/avr/delay.h:36:2: warning: #warning "This file has been moved to <util/delay.h>."
+In file included from c:/winavr-20100110/lib/gcc/../../avr/include/avr/delay.h:37,
+                 from ../ultraSonic.c:11:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../ultraSonic.c
+ 
+Building target: ultraSonic.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,ultraSonic.map -mmcu=atmega32 -o "ultraSonic.elf"  ./gpio.o ./icu.o ./lcd.o ./main.o ./ultraSonic.o   
+Finished building target: ultraSonic.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S ultraSonic.elf  >"ultraSonic.lss"
+Finished building: ultraSonic.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 ultraSonic.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    9642 bytes (29.4% Full)
+(.text + .data + .bootloader)
+
+Data:        286 bytes (14.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+00:25:51 **** Incremental Build of configuration Debug for project ultraSonic ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 ultraSonic.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    9642 bytes (29.4% Full)
+(.text + .data + .bootloader)
+
+Data:        286 bytes (14.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+00:26:26 **** Incremental Build of configuration Debug for project ultraSonic ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+../main.c: In function 'main':
+../main.c:17: warning: implicit declaration of function 'LCD_displayString'
+../main.c:20: warning: implicit declaration of function '_delay_ms'
+../main.c:25: warning: implicit declaration of function 'LCD_displayCharacter'
+Finished building: ../main.c
+ 
+Building target: ultraSonic.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,ultraSonic.map -mmcu=atmega32 -o "ultraSonic.elf"  ./gpio.o ./icu.o ./lcd.o ./main.o ./ultraSonic.o   
+./main.o: In function `main':
+../main.c:17: undefined reference to `LCD_displayString'
+../main.c:20: undefined reference to `_delay_ms'
+../main.c:25: undefined reference to `LCD_displayCharacter'
+make: *** [ultraSonic.elf] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+00:27:37 **** Incremental Build of configuration Debug for project ultraSonic ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:11:
+c:/winavr-20100110/lib/gcc/../../avr/include/avr/delay.h:36:2: warning: #warning "This file has been moved to <util/delay.h>."
+In file included from c:/winavr-20100110/lib/gcc/../../avr/include/avr/delay.h:37,
+                 from ../main.c:11:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../main.c
+ 
+Building target: ultraSonic.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,ultraSonic.map -mmcu=atmega32 -o "ultraSonic.elf"  ./gpio.o ./icu.o ./lcd.o ./main.o ./ultraSonic.o   
+Finished building target: ultraSonic.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S ultraSonic.elf  >"ultraSonic.lss"
+Finished building: ultraSonic.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 ultraSonic.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    9884 bytes (30.2% Full)
+(.text + .data + .bootloader)
+
+Data:        288 bytes (14.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+00:29:29 **** Incremental Build of configuration Debug for project ultraSonic ****
+make all 
+Building file: ../icu.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"icu.d" -MT"icu.o" -c -o "icu.o" "../icu.c"
+../icu.c: In function 'Icu_setCallBack':
+../icu.c:71: warning: function return types not compatible due to 'volatile'
+Finished building: ../icu.c
+ 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+Finished building: ../main.c
+ 
+Building file: ../ultraSonic.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"ultraSonic.d" -MT"ultraSonic.o" -c -o "ultraSonic.o" "../ultraSonic.c"
+In file included from ../ultraSonic.c:11:
+c:/winavr-20100110/lib/gcc/../../avr/include/avr/delay.h:36:2: warning: #warning "This file has been moved to <util/delay.h>."
+In file included from c:/winavr-20100110/lib/gcc/../../avr/include/avr/delay.h:37,
+                 from ../ultraSonic.c:11:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../ultraSonic.c
+ 
+Building target: ultraSonic.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,ultraSonic.map -mmcu=atmega32 -o "ultraSonic.elf"  ./gpio.o ./icu.o ./lcd.o ./main.o ./ultraSonic.o   
+Finished building target: ultraSonic.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S ultraSonic.elf  >"ultraSonic.lss"
+Finished building: ultraSonic.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 ultraSonic.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    9590 bytes (29.3% Full)
+(.text + .data + .bootloader)
+
+Data:        284 bytes (13.9% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+00:30:19 **** Incremental Build of configuration Debug for project ultraSonic ****
+make all 
+Building file: ../icu.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"icu.d" -MT"icu.o" -c -o "icu.o" "../icu.c"
+../icu.c: In function 'Icu_setCallBack':
+../icu.c:33: warning: function return types not compatible due to 'volatile'
+Finished building: ../icu.c
+ 
+Building target: ultraSonic.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,ultraSonic.map -mmcu=atmega32 -o "ultraSonic.elf"  ./gpio.o ./icu.o ./lcd.o ./main.o ./ultraSonic.o   
+Finished building target: ultraSonic.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S ultraSonic.elf  >"ultraSonic.lss"
+Finished building: ultraSonic.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 ultraSonic.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    9580 bytes (29.2% Full)
+(.text + .data + .bootloader)
+
+Data:        284 bytes (13.9% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+00:32:26 **** Incremental Build of configuration Debug for project ultraSonic ****
+make all 
+Building file: ../icu.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"icu.d" -MT"icu.o" -c -o "icu.o" "../icu.c"
+../icu.c: In function 'Icu_setCallBack':
+../icu.c:33: warning: function return types not compatible due to 'volatile'
+Finished building: ../icu.c
+ 
+Building file: ../ultraSonic.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"ultraSonic.d" -MT"ultraSonic.o" -c -o "ultraSonic.o" "../ultraSonic.c"
+In file included from ../ultraSonic.c:11:
+c:/winavr-20100110/lib/gcc/../../avr/include/avr/delay.h:36:2: warning: #warning "This file has been moved to <util/delay.h>."
+In file included from c:/winavr-20100110/lib/gcc/../../avr/include/avr/delay.h:37,
+                 from ../ultraSonic.c:11:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../ultraSonic.c
+ 
+Building target: ultraSonic.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,ultraSonic.map -mmcu=atmega32 -o "ultraSonic.elf"  ./gpio.o ./icu.o ./lcd.o ./main.o ./ultraSonic.o   
+Finished building target: ultraSonic.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S ultraSonic.elf  >"ultraSonic.lss"
+Finished building: ultraSonic.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 ultraSonic.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    9580 bytes (29.2% Full)
+(.text + .data + .bootloader)
+
+Data:        284 bytes (13.9% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+00:32:35 **** Incremental Build of configuration Debug for project ultraSonic ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 ultraSonic.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    9580 bytes (29.2% Full)
+(.text + .data + .bootloader)
+
+Data:        284 bytes (13.9% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+00:35:32 **** Incremental Build of configuration Debug for project ultraSonic ****
+make all 
+Building file: ../icu.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"icu.d" -MT"icu.o" -c -o "icu.o" "../icu.c"
+../icu.c: In function 'Icu_init':
+../icu.c:24: error: 'PORTD_ID' undeclared (first use in this function)
+../icu.c:24: error: (Each undeclared identifier is reported only once
+../icu.c:24: error: for each function it appears in.)
+../icu.c: In function 'Icu_setCallBack':
+../icu.c:35: warning: function return types not compatible due to 'volatile'
+make: *** [icu.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+00:36:01 **** Incremental Build of configuration Debug for project ultraSonic ****
+make all 
+Building file: ../icu.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"icu.d" -MT"icu.o" -c -o "icu.o" "../icu.c"
+../icu.c: In function 'Icu_setCallBack':
+../icu.c:35: warning: function return types not compatible due to 'volatile'
+Finished building: ../icu.c
+ 
+Building file: ../ultraSonic.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"ultraSonic.d" -MT"ultraSonic.o" -c -o "ultraSonic.o" "../ultraSonic.c"
+In file included from ../ultraSonic.c:11:
+c:/winavr-20100110/lib/gcc/../../avr/include/avr/delay.h:36:2: warning: #warning "This file has been moved to <util/delay.h>."
+In file included from c:/winavr-20100110/lib/gcc/../../avr/include/avr/delay.h:37,
+                 from ../ultraSonic.c:11:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../ultraSonic.c
+ 
+Building target: ultraSonic.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,ultraSonic.map -mmcu=atmega32 -o "ultraSonic.elf"  ./gpio.o ./icu.o ./lcd.o ./main.o ./ultraSonic.o   
+Finished building target: ultraSonic.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S ultraSonic.elf  >"ultraSonic.lss"
+Finished building: ultraSonic.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 ultraSonic.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    9594 bytes (29.3% Full)
+(.text + .data + .bootloader)
+
+Data:        284 bytes (13.9% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+00:37:13 **** Incremental Build of configuration Debug for project ultraSonic ****
+make all 
+Building file: ../icu.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"icu.d" -MT"icu.o" -c -o "icu.o" "../icu.c"
+../icu.c: In function 'Icu_setCallBack':
+../icu.c:35: warning: function return types not compatible due to 'volatile'
+Finished building: ../icu.c
+ 
+Building target: ultraSonic.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,ultraSonic.map -mmcu=atmega32 -o "ultraSonic.elf"  ./gpio.o ./icu.o ./lcd.o ./main.o ./ultraSonic.o   
+Finished building target: ultraSonic.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S ultraSonic.elf  >"ultraSonic.lss"
+Finished building: ultraSonic.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 ultraSonic.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    9594 bytes (29.3% Full)
+(.text + .data + .bootloader)
+
+Data:        284 bytes (13.9% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+00:40:00 **** Incremental Build of configuration Debug for project ultraSonic ****
+make all 
+Building file: ../icu.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"icu.d" -MT"icu.o" -c -o "icu.o" "../icu.c"
+../icu.c:15:67: error: ../common_macros.h: No such file or directory
+../icu.c: In function 'Icu_setCallBack':
+../icu.c:81: warning: function return types not compatible due to 'volatile'
+make: *** [icu.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+00:40:18 **** Incremental Build of configuration Debug for project ultraSonic ****
+make all 
+Building file: ../icu.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"icu.d" -MT"icu.o" -c -o "icu.o" "../icu.c"
+../icu.c: In function 'Icu_setCallBack':
+../icu.c:81: warning: function return types not compatible due to 'volatile'
+Finished building: ../icu.c
+ 
+Building target: ultraSonic.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,ultraSonic.map -mmcu=atmega32 -o "ultraSonic.elf"  ./gpio.o ./icu.o ./lcd.o ./main.o ./ultraSonic.o   
+Finished building target: ultraSonic.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S ultraSonic.elf  >"ultraSonic.lss"
+Finished building: ultraSonic.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 ultraSonic.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    9590 bytes (29.3% Full)
+(.text + .data + .bootloader)
+
+Data:        284 bytes (13.9% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+00:40:45 **** Incremental Build of configuration Debug for project ultraSonic ****
+make all 
+Building file: ../icu.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"icu.d" -MT"icu.o" -c -o "icu.o" "../icu.c"
+../icu.c: In function 'Icu_setCallBack':
+../icu.c:35: warning: function return types not compatible due to 'volatile'
+Finished building: ../icu.c
+ 
+Building target: ultraSonic.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,ultraSonic.map -mmcu=atmega32 -o "ultraSonic.elf"  ./gpio.o ./icu.o ./lcd.o ./main.o ./ultraSonic.o   
+Finished building target: ultraSonic.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S ultraSonic.elf  >"ultraSonic.lss"
+Finished building: ultraSonic.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 ultraSonic.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    9594 bytes (29.3% Full)
+(.text + .data + .bootloader)
+
+Data:        284 bytes (13.9% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+00:42:33 **** Incremental Build of configuration Debug for project ultraSonic ****
+make all 
+Building file: ../icu.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"icu.d" -MT"icu.o" -c -o "icu.o" "../icu.c"
+../icu.c: In function 'Icu_setCallBack':
+../icu.c:36: warning: function return types not compatible due to 'volatile'
+Finished building: ../icu.c
+ 
+Building target: ultraSonic.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,ultraSonic.map -mmcu=atmega32 -o "ultraSonic.elf"  ./gpio.o ./icu.o ./lcd.o ./main.o ./ultraSonic.o   
+Finished building target: ultraSonic.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S ultraSonic.elf  >"ultraSonic.lss"
+Finished building: ultraSonic.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 ultraSonic.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    9596 bytes (29.3% Full)
+(.text + .data + .bootloader)
+
+Data:        284 bytes (13.9% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+00:43:38 **** Incremental Build of configuration Debug for project ultraSonic ****
+make all 
+Building file: ../icu.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"icu.d" -MT"icu.o" -c -o "icu.o" "../icu.c"
+../icu.c: In function 'Icu_setCallBack':
+../icu.c:52: warning: function return types not compatible due to 'volatile'
+Finished building: ../icu.c
+ 
+Building target: ultraSonic.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,ultraSonic.map -mmcu=atmega32 -o "ultraSonic.elf"  ./gpio.o ./icu.o ./lcd.o ./main.o ./ultraSonic.o   
+Finished building target: ultraSonic.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S ultraSonic.elf  >"ultraSonic.lss"
+Finished building: ultraSonic.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 ultraSonic.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    9596 bytes (29.3% Full)
+(.text + .data + .bootloader)
+
+Data:        284 bytes (13.9% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+00:45:48 **** Incremental Build of configuration Debug for project ultraSonic ****
+make all 
+Building file: ../icu.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"icu.d" -MT"icu.o" -c -o "icu.o" "../icu.c"
+../icu.c: In function 'Icu_setCallBack':
+../icu.c:36: warning: function return types not compatible due to 'volatile'
+Finished building: ../icu.c
+ 
+Building target: ultraSonic.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,ultraSonic.map -mmcu=atmega32 -o "ultraSonic.elf"  ./gpio.o ./icu.o ./lcd.o ./main.o ./ultraSonic.o   
+Finished building target: ultraSonic.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S ultraSonic.elf  >"ultraSonic.lss"
+Finished building: ultraSonic.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 ultraSonic.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    9596 bytes (29.3% Full)
+(.text + .data + .bootloader)
+
+Data:        284 bytes (13.9% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+00:46:55 **** Incremental Build of configuration Debug for project ultraSonic ****
+make all 
+Building file: ../ultraSonic.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"ultraSonic.d" -MT"ultraSonic.o" -c -o "ultraSonic.o" "../ultraSonic.c"
+In file included from ../ultraSonic.c:11:
+c:/winavr-20100110/lib/gcc/../../avr/include/avr/delay.h:36:2: warning: #warning "This file has been moved to <util/delay.h>."
+In file included from c:/winavr-20100110/lib/gcc/../../avr/include/avr/delay.h:37,
+                 from ../ultraSonic.c:11:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../ultraSonic.c
+ 
+Building target: ultraSonic.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,ultraSonic.map -mmcu=atmega32 -o "ultraSonic.elf"  ./gpio.o ./icu.o ./lcd.o ./main.o ./ultraSonic.o   
+Finished building target: ultraSonic.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S ultraSonic.elf  >"ultraSonic.lss"
+Finished building: ultraSonic.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 ultraSonic.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    9598 bytes (29.3% Full)
+(.text + .data + .bootloader)
+
+Data:        284 bytes (13.9% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+00:49:03 **** Incremental Build of configuration Debug for project ultraSonic ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+Finished building: ../main.c
+ 
+Building target: ultraSonic.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,ultraSonic.map -mmcu=atmega32 -o "ultraSonic.elf"  ./gpio.o ./icu.o ./lcd.o ./main.o ./ultraSonic.o   
+Finished building target: ultraSonic.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S ultraSonic.elf  >"ultraSonic.lss"
+Finished building: ultraSonic.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 ultraSonic.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    9600 bytes (29.3% Full)
+(.text + .data + .bootloader)
+
+Data:        284 bytes (13.9% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+00:49:51 **** Incremental Build of configuration Debug for project ultraSonic ****
+make all 
+Building file: ../ultraSonic.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"ultraSonic.d" -MT"ultraSonic.o" -c -o "ultraSonic.o" "../ultraSonic.c"
+In file included from ../ultraSonic.c:11:
+c:/winavr-20100110/lib/gcc/../../avr/include/avr/delay.h:36:2: warning: #warning "This file has been moved to <util/delay.h>."
+In file included from c:/winavr-20100110/lib/gcc/../../avr/include/avr/delay.h:37,
+                 from ../ultraSonic.c:11:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../ultraSonic.c
+ 
+Building target: ultraSonic.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,ultraSonic.map -mmcu=atmega32 -o "ultraSonic.elf"  ./gpio.o ./icu.o ./lcd.o ./main.o ./ultraSonic.o   
+Finished building target: ultraSonic.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S ultraSonic.elf  >"ultraSonic.lss"
+Finished building: ultraSonic.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 ultraSonic.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    9660 bytes (29.5% Full)
+(.text + .data + .bootloader)
+
+Data:        286 bytes (14.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+00:50:39 **** Incremental Build of configuration Debug for project ultraSonic ****
+make all 
+Building file: ../ultraSonic.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"ultraSonic.d" -MT"ultraSonic.o" -c -o "ultraSonic.o" "../ultraSonic.c"
+In file included from ../ultraSonic.c:11:
+c:/winavr-20100110/lib/gcc/../../avr/include/avr/delay.h:36:2: warning: #warning "This file has been moved to <util/delay.h>."
+In file included from c:/winavr-20100110/lib/gcc/../../avr/include/avr/delay.h:37,
+                 from ../ultraSonic.c:11:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../ultraSonic.c
+ 
+Building target: ultraSonic.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,ultraSonic.map -mmcu=atmega32 -o "ultraSonic.elf"  ./gpio.o ./icu.o ./lcd.o ./main.o ./ultraSonic.o   
+Finished building target: ultraSonic.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S ultraSonic.elf  >"ultraSonic.lss"
+Finished building: ultraSonic.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 ultraSonic.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    9660 bytes (29.5% Full)
+(.text + .data + .bootloader)
+
+Data:        286 bytes (14.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+00:51:33 **** Incremental Build of configuration Debug for project ultraSonic ****
+make all 
+Building file: ../ultraSonic.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"ultraSonic.d" -MT"ultraSonic.o" -c -o "ultraSonic.o" "../ultraSonic.c"
+In file included from ../ultraSonic.c:12:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../ultraSonic.c
+ 
+Building target: ultraSonic.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,ultraSonic.map -mmcu=atmega32 -o "ultraSonic.elf"  ./gpio.o ./icu.o ./lcd.o ./main.o ./ultraSonic.o   
+Finished building target: ultraSonic.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S ultraSonic.elf  >"ultraSonic.lss"
+Finished building: ultraSonic.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 ultraSonic.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    9660 bytes (29.5% Full)
+(.text + .data + .bootloader)
+
+Data:        286 bytes (14.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+00:57:43 **** Incremental Build of configuration Debug for project ultraSonic ****
+make all 
+Building file: ../ultraSonic.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"ultraSonic.d" -MT"ultraSonic.o" -c -o "ultraSonic.o" "../ultraSonic.c"
+In file included from ../ultraSonic.c:11:
+c:/winavr-20100110/lib/gcc/../../avr/include/avr/delay.h:36:2: warning: #warning "This file has been moved to <util/delay.h>."
+In file included from c:/winavr-20100110/lib/gcc/../../avr/include/avr/delay.h:37,
+                 from ../ultraSonic.c:11:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../ultraSonic.c
+ 
+Building target: ultraSonic.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,ultraSonic.map -mmcu=atmega32 -o "ultraSonic.elf"  ./gpio.o ./icu.o ./lcd.o ./main.o ./ultraSonic.o   
+Finished building target: ultraSonic.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S ultraSonic.elf  >"ultraSonic.lss"
+Finished building: ultraSonic.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 ultraSonic.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    9660 bytes (29.5% Full)
+(.text + .data + .bootloader)
+
+Data:        286 bytes (14.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+00:57:46 **** Incremental Build of configuration Debug for project ultraSonic ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 ultraSonic.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    9660 bytes (29.5% Full)
+(.text + .data + .bootloader)
+
+Data:        286 bytes (14.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+00:58:21 **** Incremental Build of configuration Debug for project ultraSonic ****
+make all 
+Building file: ../ultraSonic.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"ultraSonic.d" -MT"ultraSonic.o" -c -o "ultraSonic.o" "../ultraSonic.c"
+In file included from ../ultraSonic.c:11:
+c:/winavr-20100110/lib/gcc/../../avr/include/avr/delay.h:36:2: warning: #warning "This file has been moved to <util/delay.h>."
+In file included from c:/winavr-20100110/lib/gcc/../../avr/include/avr/delay.h:37,
+                 from ../ultraSonic.c:11:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../ultraSonic.c
+ 
+Building target: ultraSonic.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,ultraSonic.map -mmcu=atmega32 -o "ultraSonic.elf"  ./gpio.o ./icu.o ./lcd.o ./main.o ./ultraSonic.o   
+Finished building target: ultraSonic.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S ultraSonic.elf  >"ultraSonic.lss"
+Finished building: ultraSonic.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 ultraSonic.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    9660 bytes (29.5% Full)
+(.text + .data + .bootloader)
+
+Data:        286 bytes (14.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+01:06:22 **** Incremental Build of configuration Debug for project ultraSonic ****
+make all 
+Building file: ../ultraSonic.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"ultraSonic.d" -MT"ultraSonic.o" -c -o "ultraSonic.o" "../ultraSonic.c"
+In file included from ../ultraSonic.c:11:
+c:/winavr-20100110/lib/gcc/../../avr/include/avr/delay.h:36:2: warning: #warning "This file has been moved to <util/delay.h>."
+In file included from c:/winavr-20100110/lib/gcc/../../avr/include/avr/delay.h:37,
+                 from ../ultraSonic.c:11:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../ultraSonic.c
+ 
+Building target: ultraSonic.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,ultraSonic.map -mmcu=atmega32 -o "ultraSonic.elf"  ./gpio.o ./icu.o ./lcd.o ./main.o ./ultraSonic.o   
+Finished building target: ultraSonic.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S ultraSonic.elf  >"ultraSonic.lss"
+Finished building: ultraSonic.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 ultraSonic.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    9660 bytes (29.5% Full)
+(.text + .data + .bootloader)
+
+Data:        286 bytes (14.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+01:23:54 **** Incremental Build of configuration Debug for project ultraSonic ****
+make all 
+Building file: ../ultraSonic.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"ultraSonic.d" -MT"ultraSonic.o" -c -o "ultraSonic.o" "../ultraSonic.c"
+In file included from ../ultraSonic.c:11:
+c:/winavr-20100110/lib/gcc/../../avr/include/avr/delay.h:36:2: warning: #warning "This file has been moved to <util/delay.h>."
+In file included from c:/winavr-20100110/lib/gcc/../../avr/include/avr/delay.h:37,
+                 from ../ultraSonic.c:11:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../ultraSonic.c
+ 
+Building target: ultraSonic.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,ultraSonic.map -mmcu=atmega32 -o "ultraSonic.elf"  ./gpio.o ./icu.o ./lcd.o ./main.o ./ultraSonic.o   
+Finished building target: ultraSonic.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S ultraSonic.elf  >"ultraSonic.lss"
+Finished building: ultraSonic.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 ultraSonic.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    9660 bytes (29.5% Full)
+(.text + .data + .bootloader)
+
+Data:        286 bytes (14.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+01:26:41 **** Incremental Build of configuration Debug for project ultraSonic ****
+make all 
+Building file: ../ultraSonic.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"ultraSonic.d" -MT"ultraSonic.o" -c -o "ultraSonic.o" "../ultraSonic.c"
+In file included from ../ultraSonic.c:11:
+c:/winavr-20100110/lib/gcc/../../avr/include/avr/delay.h:36:2: warning: #warning "This file has been moved to <util/delay.h>."
+In file included from c:/winavr-20100110/lib/gcc/../../avr/include/avr/delay.h:37,
+                 from ../ultraSonic.c:11:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../ultraSonic.c
+ 
+Building target: ultraSonic.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,ultraSonic.map -mmcu=atmega32 -o "ultraSonic.elf"  ./gpio.o ./icu.o ./lcd.o ./main.o ./ultraSonic.o   
+Finished building target: ultraSonic.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S ultraSonic.elf  >"ultraSonic.lss"
+Finished building: ultraSonic.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 ultraSonic.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    9660 bytes (29.5% Full)
+(.text + .data + .bootloader)
+
+Data:        286 bytes (14.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+01:34:48 **** Incremental Build of configuration Debug for project ultraSonic ****
+make all 
+Building file: ../gpio.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"gpio.d" -MT"gpio.o" -c -o "gpio.o" "../gpio.c"
+Finished building: ../gpio.c
+ 
+Building file: ../icu.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"icu.d" -MT"icu.o" -c -o "icu.o" "../icu.c"
+../icu.c: In function 'Icu_setCallBack':
+../icu.c:36: warning: function return types not compatible due to 'volatile'
+Finished building: ../icu.c
+ 
+Building file: ../lcd.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"lcd.d" -MT"lcd.o" -c -o "lcd.o" "../lcd.c"
+In file included from ../lcd.c:7:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../lcd.c: In function 'LCD_intgerToString':
+../lcd.c:158: warning: implicit declaration of function 'itoa'
+Finished building: ../lcd.c
+ 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+Finished building: ../main.c
+ 
+Building file: ../ultraSonic.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"ultraSonic.d" -MT"ultraSonic.o" -c -o "ultraSonic.o" "../ultraSonic.c"
+In file included from ../ultraSonic.c:11:
+c:/winavr-20100110/lib/gcc/../../avr/include/avr/delay.h:36:2: warning: #warning "This file has been moved to <util/delay.h>."
+In file included from c:/winavr-20100110/lib/gcc/../../avr/include/avr/delay.h:37,
+                 from ../ultraSonic.c:11:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../ultraSonic.c
+ 
+Building target: ultraSonic.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,ultraSonic.map -mmcu=atmega32 -o "ultraSonic.elf"  ./gpio.o ./icu.o ./lcd.o ./main.o ./ultraSonic.o   
+Finished building target: ultraSonic.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S ultraSonic.elf  >"ultraSonic.lss"
+Finished building: ultraSonic.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 ultraSonic.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    9662 bytes (29.5% Full)
+(.text + .data + .bootloader)
+
+Data:        288 bytes (14.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+01:35:11 **** Incremental Build of configuration Debug for project ultraSonic ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 ultraSonic.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    9662 bytes (29.5% Full)
+(.text + .data + .bootloader)
+
+Data:        288 bytes (14.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
