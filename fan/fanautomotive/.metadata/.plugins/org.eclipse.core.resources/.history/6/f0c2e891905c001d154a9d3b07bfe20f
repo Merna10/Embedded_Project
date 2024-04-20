@@ -1,0 +1,143 @@
+/*
+ * uart.c
+ *
+ *  Created on: Oct 11, 2022
+ *      Author: merna
+ */
+
+#include "uart.h"
+
+#include "avr/io.h"
+#include "common_macros.h"
+#include "std_types.h"
+
+/*
+ * Description :
+ * Functional responsible for Initialize the UART device by:
+ * 1. Setup the Frame format like number of data bits, parity bit type and number of stop bits.
+ * 2. Enable the UART.
+ * 3. Setup the UART baud rate.
+ */
+void UART_init(const UART_ConfigType * Config_Ptr)
+{
+	uint16 ubrr_value = 0;
+	/*rxc=0
+	 * txc=0
+	 * udre=0
+	 * fe=0
+	 * dor=0
+	 * pe=0
+	 * u2x=1
+	 */
+	UCSRA = (1<<U2X);
+	/*
+	 * RXCIE=0
+	 * TXCIE=0
+	 * UDRIE=0
+	 * RXEN=1
+	 * TXEN=1
+	 *
+	 */
+	UCSRB = (1<<RXEN) | (1<<TXEN);
+	/*
+	 * URSEL=1
+	 * UMSEL=0
+	 * UPM=00
+	 * USBS=0
+	 * UCSZ1=11
+	 * UCPOL=0
+	 *
+	 */
+	UCSRC = (1<<URSEL);
+	ubrr_value= (uint16)(((F_CPU / (Config_Ptr->Baud_Rate * 8UL))) - 1);
+	UBRRL = ubrr_value;
+	UBRRH = ubrr_value<<8;
+	switch (Config_Ptr->Size) {
+	case 5:
+		CLEAR_BIT(UCSRC, UCSZ0);
+		CLEAR_BIT(UCSRC, UCSZ1);
+		CLEAR_BIT(UCSRB, UCSZ2);
+		break;
+	case 6:
+		SET_BIT(UCSRC, UCSZ0);
+		CLEAR_BIT(UCSRC, UCSZ1);
+		CLEAR_BIT(UCSRB, UCSZ2);
+		break;
+	case 7:
+		CLEAR_BIT(UCSRC, UCSZ0);
+		SET_BIT(UCSRC, UCSZ1);
+		CLEAR_BIT(UCSRB, UCSZ2);
+		break;
+	case 8:
+		SET_BIT(UCSRC, UCSZ0);
+		SET_BIT(UCSRC, UCSZ1);
+		CLEAR_BIT(UCSRB, UCSZ2);
+		break;
+	case 9:
+		SET_BIT(UCSRC, UCSZ0);
+		SET_BIT(UCSRC, UCSZ1);
+		SET_BIT(UCSRB, UCSZ2);
+		break;
+	}
+	UCSRC = (UCSRC & 0xcf) | (Config_Ptr->parity << 4);
+	if(Config_Ptr->stop_bit == one)
+	{
+		CLEAR_BIT(UCSRC,USBS);
+	}
+	else
+	{
+		SET_BIT(UCSRC, USBS);
+	}
+
+}
+
+/*
+ * Description :
+ * Functional responsible for send byte to another UART device.
+ */
+void UART_sendByte(const uint8 data)
+{
+	while(BIT_IS_CLEAR(UCSRA,UDRE)){}
+	UDR = data;
+}
+
+/*
+ * Description :
+ * Functional responsible for receive byte from another UART device.
+ */
+uint8 UART_recieveByte(void)
+{
+	while(BIT_IS_CLEAR(UCSRA,RXC)){}
+	return UDR;
+}
+
+/*
+ * Description :
+ * Send the required string through UART to the other UART device.
+ */
+void UART_sendString(const uint8 *Str)
+{
+	uint8 i = 0;
+	while(Str[i] != '\0')
+	{
+		UART_sendByte(Str[i]);
+		i++;
+	}
+}
+
+/*
+ * Description :
+ * Receive the required string until the '#' symbol through UART from the other UART device.
+ */
+void UART_receiveString(uint8 *Str) // Receive until #
+{
+	uint8 i = 0;
+	Str[i]=UART_recieveByte();
+	while(Str[i] != '#')
+	{
+		i++;
+		Str[i]=UART_recieveByte();
+	}
+	Str[i]='\0';
+
+}

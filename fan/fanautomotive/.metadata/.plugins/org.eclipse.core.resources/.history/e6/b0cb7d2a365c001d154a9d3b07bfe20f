@@ -1,0 +1,164 @@
+/*
+ * main.c
+ *
+ *  Created on: Nov 4, 2022
+ *      Author: merna
+ */
+
+#include <avr/io.h>
+#include <stdio.h>
+#include <stdlib.h>
+#define F_CPU 16000000UL
+#include <util/delay.h>
+#include "lcd.h"
+#include "gpio.h"
+#include "common_macros.h"
+#include "keyPad.h"
+
+
+float32 g_temp,g_temp2;
+uint8 i=0,max=0,v=1,key,k1,k2,k3,k4;
+uint16 time=660;
+
+
+void check(void);
+void loop1(void);
+void setup(void);
+void start(void);
+
+int main(void)
+{
+	INT0_Init();              // Enable external INT0
+	LCD_init();
+	setup();
+	start();
+	loop1();
+	while(1)
+	{
+		key = KEYPAD_getPressedKey();
+	}
+}
+void setup(void)
+{
+	/*led negative logic
+	 * buttons pull down
+	 */
+	DDRD  &= (~(1<<PD2) & ~(1<<PD4) & ~(1<<PD5) & ~(1<<PD6) & ~(1<<PD7));
+	DDRA  = DDRC | (1<<PA0)| (1<<PA1)| (1<<PA2)| (1<<PA3);  // Configure pin PA0 in PORTA as output pin
+	PORTA = PORTA | (1<<PA0)| (1<<PA1)| (1<<PA2)| (1<<PA3); // Set Value of PIN 0 in PORTA to 1 at the beginning (LED OFF)
+}
+void start(void)
+{
+	LCD_init();
+	LCD_displayStringRowColumn(0, 5, "WELCOME");
+	PORTA = PORTA & ~(1<<PA0) & ~(1<<PA1) & ~(1<<PA2) & ~(1<<PA3); // Set Value of PIN  in PORTA to 0 at the beginning (LED on)
+	_delay_ms(500);
+	PORTA = PORTA | (1<<PA0)| (1<<PA1)| (1<<PA2)| (1<<PA3);
+	_delay_ms(500);
+	PORTA = PORTA & ~(1<<PA0) & ~(1<<PA1) & ~(1<<PA2) & ~(1<<PA3); // Set Value of PIN  in PORTA to 0 at the beginning (LED on)
+	_delay_ms(500);
+	PORTA = PORTA | (1<<PA0)| (1<<PA1)| (1<<PA2)| (1<<PA3);
+	_delay_ms(500);
+	PORTA = PORTA & ~(1<<PA0) & ~(1<<PA1) & ~(1<<PA2) & ~(1<<PA3); // Set Value of PIN  in PORTA to 0 at the beginning (LED on)
+	_delay_ms(500);
+	PORTA = PORTA | (1<<PA0)| (1<<PA1)| (1<<PA2)| (1<<PA3);
+	LCD_clearScreen();
+	PORTA = PORTA | (1<<PA0)| (1<<PA1)| (1<<PA2)| (1<<PA3);
+	_delay_ms(500); // Set Value of PIN 0 in PORTA to 1 at the beginning (LED OFF)*/
+
+}
+void loop1() {
+
+	if(time<=60)
+	{
+		if(time==0)
+		{
+			time=660;
+			LCD_clearScreen();
+			LCD_displayStringRowColumn(0, 4, "CONGRATS");
+			LCD_displayStringRowColumn(1, 0, "You finished OOH");
+			i=0;
+			_delay_ms(2000);
+			start();
+		}
+		time-=10;
+	}
+	else
+	{
+		time-=40;
+	}
+	LCD_DisplayString("WATCH");
+	for (int var = 0; var < 4; var++) {
+		int ran = (rand()%5);
+		if(ran == 1) {
+			CLEAR_BIT(PORTA,PIN0);
+			_delay_ms(time);
+			SET_BIT(PORTA,PIN0);
+			KEYPAD_getPressedKey();
+			max++;
+		}
+		if(ran == 2) {
+			CLEAR_BIT(PORTA,PIN1);
+			_delay_ms(time);
+			SET_BIT(PORTA,PIN1);
+			KEYPAD_getPressedKey();
+			max++;
+		}
+		if(ran == 3) {
+			CLEAR_BIT(PORTA,PIN2);
+			_delay_ms(time);
+			SET_BIT(PORTA,PIN2);
+			KEYPAD_getPressedKey();
+			max++;
+		}
+		if(ran == 4) {
+			CLEAR_BIT(PORTA,PIN3);
+			_delay_ms(time);
+			KEYPAD_getPressedKey();
+			max++;
+		}
+	}
+	LCD_clearScreen();
+	LCD_DisplayString("PLAY");
+}
+void check(void)
+{
+	while(v == max) {
+		max=0;
+		v=0;
+		if()
+		{
+			LCD_clearScreen();
+			LCD_DisplayString("correct");
+			i++;
+			LCD_displayStringRowColumn(1, 0, "score");
+			LCD_moveCursor(1, 6);
+			LCD_intgerToString(i);
+			_delay_ms(750);
+			LCD_clearScreen();
+			g_temp=0;
+			g_temp2=0;
+			loop1();
+		}
+		else
+		{
+			LCD_clearScreen();
+			LCD_DisplayString("game over");
+			LCD_displayStringRowColumn(1, 0, "score");
+			LCD_moveCursor(1, 6);
+			LCD_intgerToString(i);
+			i=0;
+			_delay_ms(500);
+			LCD_clearScreen();
+			LCD_DisplayString("Start a new game");
+			_delay_ms(1000);
+			LCD_clearScreen();
+			time=660;
+			g_temp=0;
+			g_temp2=0;
+			loop1();
+		}
+	}
+	v++;
+}
+

@@ -1,0 +1,822 @@
+18:38:10 **** Incremental Build of configuration Debug for project simonpro ****
+make all 
+Building file: ../keyPad.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=16000000UL -MMD -MP -MF"keyPad.d" -MT"keyPad.o" -c -o "keyPad.o" "../keyPad.c"
+../keyPad.c:10:29: error: ../../MCAL/gpio.h: No such file or directory
+../keyPad.c: In function 'KEYPAD_getPressedKey':
+../keyPad.c:22: warning: implicit declaration of function 'GPIO_setupPinDirection'
+../keyPad.c:22: error: 'PORTD_ID' undeclared (first use in this function)
+../keyPad.c:22: error: (Each undeclared identifier is reported only once
+../keyPad.c:22: error: for each function it appears in.)
+../keyPad.c:22: error: 'PIN4_ID' undeclared (first use in this function)
+../keyPad.c:22: error: 'PIN_INPUT' undeclared (first use in this function)
+../keyPad.c:27: error: 'PORTC_ID' undeclared (first use in this function)
+../keyPad.c:28: error: 'PIN0_ID' undeclared (first use in this function)
+../keyPad.c:37: error: 'PIN_OUTPUT' undeclared (first use in this function)
+../keyPad.c:38: warning: implicit declaration of function 'GPIO_writePin'
+../keyPad.c:41: warning: implicit declaration of function 'GPIO_readPin'
+make: *** [keyPad.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+18:38:19 **** Incremental Build of configuration Debug for project Challenge2_Eta32mini ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Challenge2_Eta32mini.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   10614 bytes (32.4% Full)
+(.text + .data + .bootloader)
+
+Data:         26 bytes (1.3% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+18:38:20 **** Incremental Build of configuration Debug for project fan ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 fan.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   11994 bytes (36.6% Full)
+(.text + .data + .bootloader)
+
+Data:        286 bytes (14.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+18:38:20 **** Incremental Build of configuration Debug for project s2 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 s2.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   14866 bytes (45.4% Full)
+(.text + .data + .bootloader)
+
+Data:        331 bytes (16.2% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+18:38:20 **** Incremental Build of configuration Debug for project simonpro ****
+make all 
+Building file: ../keyPad.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=16000000UL -MMD -MP -MF"keyPad.d" -MT"keyPad.o" -c -o "keyPad.o" "../keyPad.c"
+Finished building: ../keyPad.c
+ 
+Building file: ../lcd.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=16000000UL -MMD -MP -MF"lcd.d" -MT"lcd.o" -c -o "lcd.o" "../lcd.c"
+In file included from ../lcd.c:7:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../lcd.c: In function 'LCD_intgerToString':
+../lcd.c:158: warning: implicit declaration of function 'itoa'
+Finished building: ../lcd.c
+ 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=16000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:14:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+In file included from ../main.c:18:
+../uart.h:12:33: error: ../../LIB/std_types.h: No such file or directory
+../main.c: In function 'loop1':
+../main.c:149: error: incompatible types in assignment
+../main.c:156: error: incompatible types in assignment
+../main.c:163: error: incompatible types in assignment
+../main.c:170: error: incompatible types in assignment
+../main.c: In function 'enterPassword':
+../main.c:240: warning: implicit declaration of function 'LCD_displayCharacter'
+../main.c: At top level:
+../main.c:255: error: redefinition of 'enterPassword'
+../main.c:230: error: previous definition of 'enterPassword' was here
+make: *** [main.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+18:38:31 **** Incremental Build of configuration Debug for project Challenge2_Eta32mini ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Challenge2_Eta32mini.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   10614 bytes (32.4% Full)
+(.text + .data + .bootloader)
+
+Data:         26 bytes (1.3% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+18:38:31 **** Incremental Build of configuration Debug for project fan ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 fan.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   11994 bytes (36.6% Full)
+(.text + .data + .bootloader)
+
+Data:        286 bytes (14.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+18:38:31 **** Incremental Build of configuration Debug for project s2 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 s2.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   14866 bytes (45.4% Full)
+(.text + .data + .bootloader)
+
+Data:        331 bytes (16.2% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+18:38:31 **** Incremental Build of configuration Debug for project simonpro ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=16000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:14:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../main.c: In function 'loop1':
+../main.c:149: error: incompatible types in assignment
+../main.c:156: error: incompatible types in assignment
+../main.c:163: error: incompatible types in assignment
+../main.c:170: error: incompatible types in assignment
+../main.c: In function 'enterPassword':
+../main.c:240: warning: implicit declaration of function 'LCD_displayCharacter'
+../main.c: At top level:
+../main.c:255: error: redefinition of 'enterPassword'
+../main.c:230: error: previous definition of 'enterPassword' was here
+make: *** [main.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+18:38:59 **** Incremental Build of configuration Debug for project Challenge2_Eta32mini ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Challenge2_Eta32mini.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   10614 bytes (32.4% Full)
+(.text + .data + .bootloader)
+
+Data:         26 bytes (1.3% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+18:38:59 **** Incremental Build of configuration Debug for project fan ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 fan.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   11994 bytes (36.6% Full)
+(.text + .data + .bootloader)
+
+Data:        286 bytes (14.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+18:38:59 **** Incremental Build of configuration Debug for project s2 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 s2.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   14866 bytes (45.4% Full)
+(.text + .data + .bootloader)
+
+Data:        331 bytes (16.2% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+18:38:59 **** Incremental Build of configuration Debug for project simonpro ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=16000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:14:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../main.c: In function 'loop1':
+../main.c:149: error: incompatible types in assignment
+../main.c:156: error: incompatible types in assignment
+../main.c:163: error: incompatible types in assignment
+../main.c:170: error: incompatible types in assignment
+../main.c: In function 'enterPassword':
+../main.c:240: warning: implicit declaration of function 'LCD_displayCharacter'
+make: *** [main.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+18:39:13 **** Incremental Build of configuration Debug for project Challenge2_Eta32mini ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Challenge2_Eta32mini.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   10614 bytes (32.4% Full)
+(.text + .data + .bootloader)
+
+Data:         26 bytes (1.3% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+18:39:13 **** Incremental Build of configuration Debug for project fan ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 fan.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   11994 bytes (36.6% Full)
+(.text + .data + .bootloader)
+
+Data:        286 bytes (14.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+18:39:13 **** Incremental Build of configuration Debug for project s2 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 s2.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   14866 bytes (45.4% Full)
+(.text + .data + .bootloader)
+
+Data:        331 bytes (16.2% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+18:39:13 **** Incremental Build of configuration Debug for project simonpro ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=16000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:14:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../main.c: In function 'loop1':
+../main.c:149: error: incompatible types in assignment
+../main.c:156: error: incompatible types in assignment
+../main.c:163: error: incompatible types in assignment
+../main.c:170: error: incompatible types in assignment
+make: *** [main.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+18:39:44 **** Incremental Build of configuration Debug for project Challenge2_Eta32mini ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Challenge2_Eta32mini.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   10614 bytes (32.4% Full)
+(.text + .data + .bootloader)
+
+Data:         26 bytes (1.3% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+18:39:44 **** Incremental Build of configuration Debug for project fan ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 fan.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   11994 bytes (36.6% Full)
+(.text + .data + .bootloader)
+
+Data:        286 bytes (14.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+18:39:44 **** Incremental Build of configuration Debug for project s2 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 s2.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   14866 bytes (45.4% Full)
+(.text + .data + .bootloader)
+
+Data:        331 bytes (16.2% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+18:39:44 **** Incremental Build of configuration Debug for project simonpro ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=16000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:14:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../main.c
+ 
+Building file: ../uart.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=16000000UL -MMD -MP -MF"uart.d" -MT"uart.o" -c -o "uart.o" "../uart.c"
+../uart.c:8:23: error: uart/uart.h: No such file or directory
+../uart.c:11:37: error: ../../LIB/common_macros.h: No such file or directory
+../uart.c:12:33: error: ../../LIB/std_types.h: No such file or directory
+../uart.c:21: warning: type defaults to 'int' in declaration of 'UART_ConfigType'
+../uart.c:21: error: expected ';', ',' or ')' before '*' token
+../uart.c:98: warning: type defaults to 'int' in declaration of 'uint8'
+../uart.c:98: error: expected ';', ',' or ')' before 'data'
+../uart.c:108: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'UART_recieveByte'
+../uart.c:118: warning: type defaults to 'int' in declaration of 'uint8'
+../uart.c:118: error: expected ';', ',' or ')' before '*' token
+../uart.c:132: error: expected ')' before '*' token
+make: *** [uart.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+18:40:11 **** Incremental Build of configuration Debug for project Challenge2_Eta32mini ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Challenge2_Eta32mini.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   10614 bytes (32.4% Full)
+(.text + .data + .bootloader)
+
+Data:         26 bytes (1.3% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+18:40:11 **** Incremental Build of configuration Debug for project fan ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 fan.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   11994 bytes (36.6% Full)
+(.text + .data + .bootloader)
+
+Data:        286 bytes (14.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+18:40:11 **** Incremental Build of configuration Debug for project s2 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 s2.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   14866 bytes (45.4% Full)
+(.text + .data + .bootloader)
+
+Data:        331 bytes (16.2% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+18:40:12 **** Incremental Build of configuration Debug for project simonpro ****
+make all 
+Building file: ../uart.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=16000000UL -MMD -MP -MF"uart.d" -MT"uart.o" -c -o "uart.o" "../uart.c"
+Finished building: ../uart.c
+ 
+Building target: simonpro.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,simonpro.map -mmcu=atmega32 -o "simonpro.elf"  ./.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./gpio.o ./interrupt.o ./keyPad.o ./lcd.o ./main.o ./uart.o   
+Finished building target: simonpro.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S simonpro.elf  >"simonpro.lss"
+Finished building: simonpro.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex simonpro.elf  "simonpro.hex"
+Finished building: simonpro.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 simonpro.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   20352 bytes (62.1% Full)
+(.text + .data + .bootloader)
+
+Data:        384 bytes (18.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+18:42:27 **** Incremental Build of configuration Debug for project Challenge2_Eta32mini ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Challenge2_Eta32mini.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   10614 bytes (32.4% Full)
+(.text + .data + .bootloader)
+
+Data:         26 bytes (1.3% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+18:42:27 **** Incremental Build of configuration Debug for project fan ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 fan.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   11994 bytes (36.6% Full)
+(.text + .data + .bootloader)
+
+Data:        286 bytes (14.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+18:42:28 **** Incremental Build of configuration Debug for project s2 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 s2.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   14866 bytes (45.4% Full)
+(.text + .data + .bootloader)
+
+Data:        331 bytes (16.2% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+18:42:28 **** Incremental Build of configuration Debug for project simonpro ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=16000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:14:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../main.c
+ 
+Building target: simonpro.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,simonpro.map -mmcu=atmega32 -o "simonpro.elf"  ./.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./gpio.o ./interrupt.o ./keyPad.o ./lcd.o ./main.o ./uart.o   
+Finished building target: simonpro.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S simonpro.elf  >"simonpro.lss"
+Finished building: simonpro.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex simonpro.elf  "simonpro.hex"
+Finished building: simonpro.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 simonpro.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   20248 bytes (61.8% Full)
+(.text + .data + .bootloader)
+
+Data:        384 bytes (18.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+18:43:35 **** Incremental Build of configuration Debug for project Challenge2_Eta32mini ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Challenge2_Eta32mini.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   10614 bytes (32.4% Full)
+(.text + .data + .bootloader)
+
+Data:         26 bytes (1.3% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+18:43:35 **** Incremental Build of configuration Debug for project fan ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 fan.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   11994 bytes (36.6% Full)
+(.text + .data + .bootloader)
+
+Data:        286 bytes (14.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+18:43:35 **** Incremental Build of configuration Debug for project s2 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 s2.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   14866 bytes (45.4% Full)
+(.text + .data + .bootloader)
+
+Data:        331 bytes (16.2% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+18:43:35 **** Incremental Build of configuration Debug for project simonpro ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=16000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:14:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../main.c
+ 
+Building target: simonpro.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,simonpro.map -mmcu=atmega32 -o "simonpro.elf"  ./.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./gpio.o ./interrupt.o ./keyPad.o ./lcd.o ./main.o ./uart.o   
+Finished building target: simonpro.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S simonpro.elf  >"simonpro.lss"
+Finished building: simonpro.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex simonpro.elf  "simonpro.hex"
+Finished building: simonpro.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 simonpro.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   20248 bytes (61.8% Full)
+(.text + .data + .bootloader)
+
+Data:        384 bytes (18.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+18:45:04 **** Incremental Build of configuration Debug for project Challenge2_Eta32mini ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Challenge2_Eta32mini.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   10614 bytes (32.4% Full)
+(.text + .data + .bootloader)
+
+Data:         26 bytes (1.3% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+18:45:05 **** Incremental Build of configuration Debug for project fan ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 fan.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   11994 bytes (36.6% Full)
+(.text + .data + .bootloader)
+
+Data:        286 bytes (14.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+18:45:05 **** Incremental Build of configuration Debug for project s2 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 s2.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   14866 bytes (45.4% Full)
+(.text + .data + .bootloader)
+
+Data:        331 bytes (16.2% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+18:45:05 **** Incremental Build of configuration Debug for project simonpro ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=16000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:14:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../main.c
+ 
+Building target: simonpro.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,simonpro.map -mmcu=atmega32 -o "simonpro.elf"  ./.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./gpio.o ./interrupt.o ./keyPad.o ./lcd.o ./main.o ./uart.o   
+Finished building target: simonpro.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S simonpro.elf  >"simonpro.lss"
+Finished building: simonpro.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex simonpro.elf  "simonpro.hex"
+Finished building: simonpro.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 simonpro.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   20116 bytes (61.4% Full)
+(.text + .data + .bootloader)
+
+Data:        384 bytes (18.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+18:45:20 **** Incremental Build of configuration Debug for project Challenge2_Eta32mini ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Challenge2_Eta32mini.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   10614 bytes (32.4% Full)
+(.text + .data + .bootloader)
+
+Data:         26 bytes (1.3% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+18:45:20 **** Incremental Build of configuration Debug for project fan ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 fan.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   11994 bytes (36.6% Full)
+(.text + .data + .bootloader)
+
+Data:        286 bytes (14.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+18:45:21 **** Incremental Build of configuration Debug for project s2 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 s2.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   14866 bytes (45.4% Full)
+(.text + .data + .bootloader)
+
+Data:        331 bytes (16.2% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+18:45:21 **** Incremental Build of configuration Debug for project simonpro ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=16000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:14:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../main.c
+ 
+Building target: simonpro.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,simonpro.map -mmcu=atmega32 -o "simonpro.elf"  ./.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./gpio.o ./interrupt.o ./keyPad.o ./lcd.o ./main.o ./uart.o   
+Finished building target: simonpro.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S simonpro.elf  >"simonpro.lss"
+Finished building: simonpro.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex simonpro.elf  "simonpro.hex"
+Finished building: simonpro.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 simonpro.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   20116 bytes (61.4% Full)
+(.text + .data + .bootloader)
+
+Data:        384 bytes (18.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 

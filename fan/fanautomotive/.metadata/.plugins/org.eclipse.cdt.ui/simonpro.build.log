@@ -1,0 +1,40 @@
+18:45:21 **** Incremental Build of configuration Debug for project simonpro ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=16000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:14:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../main.c
+ 
+Building target: simonpro.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,simonpro.map -mmcu=atmega32 -o "simonpro.elf"  ./.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./gpio.o ./interrupt.o ./keyPad.o ./lcd.o ./main.o ./uart.o   
+Finished building target: simonpro.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S simonpro.elf  >"simonpro.lss"
+Finished building: simonpro.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex simonpro.elf  "simonpro.hex"
+Finished building: simonpro.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 simonpro.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   20116 bytes (61.4% Full)
+(.text + .data + .bootloader)
+
+Data:        384 bytes (18.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+
+18:45:21 Build Finished. 0 errors, 1 warnings. (took 597ms)
+

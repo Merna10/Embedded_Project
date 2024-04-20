@@ -1,0 +1,136 @@
+/*
+ * KAYPAD.c
+ *
+ *  Created on: Oct 12, 2022
+ *      Author: merna
+ */
+
+#include "keyPad.h"
+
+#include "gpio.h"
+
+#ifndef STANDARD_KEYPAD
+#if(KEYPAD_COLS == 3 )
+static uint8 KEYPAD_4x3_adjustKeyNumber(uint8 button_number);
+#elif(KEYPAD_COLS == 4)
+static uint8 KEYPAD_4x4_adjustKeyNumber(uint8 button_number);
+#endif
+#endif
+uint8 KEYPAD_getPressedKey(void)
+{
+	uint8 row,col;
+	GPIO_setupPinDirection(KEYPAD_ROWS_PORT_ID, KEYPAD_FIRST_ROW_PIN_ID, PIN_INPUT);
+	GPIO_setupPinDirection(KEYPAD_ROWS_PORT_ID, KEYPAD_FIRST_ROW_PIN_ID+1, PIN_INPUT);
+	GPIO_setupPinDirection(KEYPAD_ROWS_PORT_ID, KEYPAD_FIRST_ROW_PIN_ID+2, PIN_INPUT);
+	GPIO_setupPinDirection(KEYPAD_ROWS_PORT_ID, KEYPAD_FIRST_ROW_PIN_ID+3, PIN_INPUT);
+
+	GPIO_setupPinDirection(KEYPAD_COLS_PORT_ID, KEYPAD_COLS_PORT_ID, PIN_INPUT);
+	GPIO_setupPinDirection(KEYPAD_COLS_PORT_ID, KEYPAD_FIRST_COL_PIN_ID+1, PIN_INPUT);
+	GPIO_setupPinDirection(KEYPAD_COLS_PORT_ID, KEYPAD_FIRST_COL_PIN_ID+2, PIN_INPUT);
+#if(KEYPAD_COLS == 4 )
+	GPIO_setupPinDirection(KEYPAD_COLS_PORT_ID, KEYPAD_FIRST_COL_PIN_ID+3, PIN_INPUT);
+#endif
+	while(1)
+	{
+		for(row=0;row<KEYPAD_ROWS;row++)
+		{
+			GPIO_setupPinDirection(KEYPAD_ROWS_PORT_ID, KEYPAD_FIRST_ROW_PIN_ID+row, PIN_OUTPUT);
+			GPIO_writePin(KEYPAD_ROWS_PORT_ID, KEYPAD_FIRST_ROW_PIN_ID+row, KEYPAD_BUTTON_PRESSED);
+			for(col=0;col<KEYPAD_COLS;col++)
+			{
+				if(GPIO_readPin(KEYPAD_COLS_PORT_ID, KEYPAD_FIRST_COL_PIN_ID+col) == KEYPAD_BUTTON_PRESSED)
+				{
+#if(KEYPAD_COLS == 4 )
+#ifdef STANDARD_KEYPAD
+					return ((row*KAYPAD_COLS)+col+1);
+#else
+					return KEYPAD_4x4_adjustKeyNumber(row*KEYPAD_COLS+col+1);
+#endif
+#elif(KEYPAD_COLS == 3 )
+#ifdef STANDARD_KEYPAD
+					return ((row*KEYPAD_COLS)+col+1);
+#else
+					return KEYPAD_4x3_adjustKeyNumber(row*KEYPAD_COLS+col+1);
+#endif
+#endif
+				}
+			}
+			GPIO_setupPinDirection(KEYPAD_ROWS_PORT_ID, KEYPAD_FIRST_ROW_PIN_ID+row, PIN_INPUT);
+		}
+	}
+}
+#ifndef STANDARD_KEYPAD
+#if(KEYPAD_COLS == 3 )
+/*keypad 4x3 shape*/
+static uint8 KEYPAD_4x3_adjustKeyNumber(uint8 button_number)
+{
+	uint8 keypad_button = 0;
+	switch (button_number) {
+	case 10:
+		keypad_button = '*';
+		break;
+	case 11:
+		keypad_button = 0;
+		break;
+	case 12:
+		keypad_button = '#';
+		break;
+	default:
+		break;
+	}
+	return keypad_button;
+}
+
+
+#elif(KEYPAD_COLS == 4 )
+/*keypad 4x4 shape*/
+static uint8 KEYPAD_4x4_adjustKeyNumber(uint8 button_number)
+{
+	uint8 keypad_button = 0;
+	switch (button_number) {
+	case 4:
+		keypad_button = 'A';
+		break;
+	case 5:
+		keypad_button = 4;
+		break;
+	case 6:
+		keypad_button = 5;
+		break;
+	case 7:
+		keypad_button = 6;
+		break;
+	case 8:
+		keypad_button = 'B';
+		break;
+	case 9:
+		keypad_button = 7;
+		break;
+	case 10:
+		keypad_button = 8;
+		break;
+	case 11:
+		keypad_button = 9;
+		break;
+	case 12:
+		keypad_button = 'C';
+		break;
+	case 13:
+		keypad_button = '*';
+		break;
+	case 14:
+		keypad_button = 0;
+		break;
+	case 15:
+		keypad_button = '#';
+		break;
+	case 16:
+		keypad_button = 'D';
+		break;
+	default:
+		break;
+	}
+	return keypad_button;
+}
+#endif
+#endif

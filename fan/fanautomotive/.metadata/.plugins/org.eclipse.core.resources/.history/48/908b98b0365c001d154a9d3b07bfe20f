@@ -1,0 +1,30 @@
+/*
+ * KEYPAD.h
+ *
+ *  Created on: Oct 12, 2022
+ *      Author: merna
+ */
+
+#ifndef KEYPAD_H_
+#define KEYPAD_H_
+#include "std_types.h"
+
+
+/*defination*/
+#define  KEYPAD_ROWS                4
+#define  KEYPAD_COLS                4
+
+#define  KEYPAD_ROWS_PORT_ID        PORTA_ID
+#define  KEYPAD_FIRST_ROW_PIN_ID    PIN0_ID
+
+#define  KEYPAD_COLS_PORT_ID        PORTA_ID
+#define  KEYPAD_FIRST_COL_PIN_ID    PIN4_ID
+
+#define KEYPAD_BUTTON_PRESSED       LOGIC_LOW
+#define KEYPAD_BUTTON_RELEASED      LOGIC_HIGH
+
+/*PROTOTYPES*/
+
+/*KEYPAD PRESSED PUTTON*/
+uint8 KEYPAD_getPressedKey(void);
+#endif /* KEYPAD_H_ */

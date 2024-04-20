@@ -1,0 +1,31 @@
+/*
+ * KAYPAD.c
+ *
+ *  Created on: Oct 12, 2022
+ *      Author: merna
+ */
+
+#include "keyPad.h"
+
+#include "gpio.h"
+
+
+uint8 KEYPAD_getPressedKey(void)
+{
+	uint8 row,col;
+	GPIO_setupPinDirection(KEYPAD_ROWS_PORT_ID, KEYPAD_FIRST_ROW_PIN_ID, PIN_INPUT);
+	GPIO_setupPinDirection(KEYPAD_ROWS_PORT_ID, KEYPAD_FIRST_ROW_PIN_ID+1, PIN_INPUT);
+	GPIO_setupPinDirection(KEYPAD_ROWS_PORT_ID, KEYPAD_FIRST_ROW_PIN_ID+2, PIN_INPUT);
+	GPIO_setupPinDirection(KEYPAD_ROWS_PORT_ID, KEYPAD_FIRST_ROW_PIN_ID+3, PIN_INPUT);
+
+	while(1)
+	{
+		for(row=0;row<KEYPAD_ROWS;row++)
+		{
+			GPIO_setupPinDirection(KEYPAD_ROWS_PORT_ID, KEYPAD_FIRST_ROW_PIN_ID+row, PIN_OUTPUT);
+			GPIO_writePin(KEYPAD_ROWS_PORT_ID, KEYPAD_FIRST_ROW_PIN_ID+row, KEYPAD_BUTTON_PRESSED);
+			GPIO_setupPinDirection(KEYPAD_ROWS_PORT_ID, KEYPAD_FIRST_ROW_PIN_ID+row, PIN_INPUT);
+		}
+	}
+}
+
