@@ -1,0 +1,146 @@
+/*
+ * stopW.c
+ *
+ *  Created on: Sep 17, 2022
+ *      Author: merna
+ */
+
+
+#include <avr/io.h>
+#include <avr/interrupt.h>
+#include <util/delay.h>
+unsigned char g_S1 = 0;
+unsigned char g_S2 = 0;
+unsigned char g_H1 = 0;
+unsigned char g_H2 = 0;
+unsigned char g_M1 = 0;
+unsigned char g_M2 = 0;
+/*
+ prescale   //  timer clock   //   time period   // timer value
+ none              1Mhz             1/1Mhz=1micros    1/1micros=1M
+ 8               1/8=125000         1/125000=8micros   1/1micros=8M
+ 64               1/64=15625        1/15625=6.4*10^-5   1/6.4*10^-5=15625
+ 256               1/256=3906.25        1/3906.25=2.56*10^-4   1/2.56*10^-4 =3906.25
+ 1024               1/64=15625        1/15625=6.4*10^-5   1/6.4*10^-5=15625
+
+ */
+void Timer1_CTC_Init(void)
+{
+	TCNT1 = 0;
+	OCR1A = 15620;
+	TIMSK |= (1<<OCIE1A);
+	TCCR1A = (1<<FOC1A);
+	TCCR1B = (1<<WGM12) | (1<<CS11) | (1<<CS10);
+
+}
+ISR(TIMER1_COMPA_vect)
+{
+	g_S1++;
+	if(g_S1==9)
+	{
+		g_S2++;
+		g_S1=0;
+	}
+	if(g_S2==6)
+	{
+		g_M1++;
+		g_S2=0;
+	}
+	if(g_M1==9)
+	{
+		g_M2++;
+		g_M1=0;
+	}
+	if(g_M2==6)
+	{
+		g_H1++;
+		g_M2=0;
+	}
+	if(g_H1==9)
+	{
+		g_H2++;
+		g_H1=0;
+	}
+
+}
+
+ISR(INT0_vect)
+{
+	g_S1 = 0;
+	g_S2 = 0;
+	g_M1 = 0;
+	g_M2 = 0;
+	g_H1 = 0;
+	g_H2 = 0;
+}
+ISR(INT1_vect)
+{
+
+}
+ISR(INT2_vect)
+{
+
+}
+
+void INT0_Init(void)
+{
+	DDRD  &= (~(1<<PD2));   // Configure INT0 as input pin
+	MCUCR |= (1<<ISC01) ;   // Trigger INT0 with the falling edge
+	GICR  |= (1<<INT0);    // Enable external interrupt pin INT0
+}
+void INT1_Init(void)
+{
+	DDRD  &= (~(1<<PD3));   // Configure INT1 as input pin
+	MCUCR |= (1<<ISC10)| (1<<ISC11);;   // Trigger INT1 with the raising edge
+	GICR  |= (1<<INT1);    // Enable external interrupt pin INT1
+}
+void INT2_Init(void)
+{
+	DDRB   &= (~(1<<PB2));   // Configure INT2 as input pin
+	MCUCSR|=(1<<ISC2);    // Trigger INT1 with the falling edge
+	GICR  |= (1<<INT2);    // Enable external interrupt pin INT2
+}
+int main(void)
+{
+	INT0_Init();
+	INT1_Init();
+	INT2_Init();
+	Timer1_CTC_Init();
+	DDRC |= 0x0F;
+	PORTC &= 0xF0;
+	DDRA |= 0x7F;
+	PORTA &= 0x80;
+	SREG|=(1<<7);
+	while(1)
+	{
+		      // disable other unneeded 7 segment that was enabled before
+		PORTA |= (1<<PA0);       // enable 7 segment needed to print the number on
+		PORTC = g_S1;            //print on the first 7 segment on the right.
+		_delay_ms(2);
+		// same goes again with the rest 7 segments
+		PORTA &= ~(1<<PA5);
+		PORTA |= (1<<PA4);
+		PORTC = g_S2;
+		_delay_ms(2);
+
+		PORTA &= ~(1<<PA4);
+		PORTA |= (1<<PA3);
+		PORTC = g_M1;
+		_delay_ms(2);
+
+		PORTA &= ~(1<<PA3);
+		PORTA |= (1<<PA2);
+		PORTC = g_M2;
+		_delay_ms(2);
+
+		PORTA &= ~(1<<PA2);
+		PORTA |= (1<<PA1);
+		PORTC = g_H1;
+		_delay_ms(2);
+
+		PORTA &= ~(1<<PA1);
+		PORTA |= (1<<PA0);
+		PORTC = g_H2;
+		_delay_ms(2);
+	}
+}
