@@ -1,0 +1,25 @@
+/*
+ * pwm.c
+ *
+ *  Created on: Oct 9, 2022
+ *      Author: merna
+ */
+
+#include "common_macros.h"
+#include "gpio.h"
+#include "pwm.h"
+#include <avr/io.h>
+
+
+
+void delay(uint16 timer)
+{
+	TCNT1 = 0;
+	OCR1A = timer;
+	TCCR1A = 0x00;
+	TCCR1B = 0x0D;
+	while((TIFR&(1<<OCF1A))==0)
+	{ }
+	TCCR1B = 0;
+	TIFR = 1<<OCF1A;
+}

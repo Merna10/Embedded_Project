@@ -1,0 +1,26 @@
+/*
+ * button.c
+ *
+ *  Created on: Oct 22, 2022
+ *      Author: merna
+ */
+#include "level.h"
+#include "avr/delay.h"
+uint8 count;
+uint8 a[100];
+
+void setup(void)
+{
+	DDRD  &= (~(1<<PD2) & ~(1<<PD4) & ~(1<<PD5) & ~(1<<PD6) & ~(1<<PD7));
+	DDRC  = DDRC | (1<<PC0)| (1<<PC1)| (1<<PC2)| (1<<PC3);  // Configure pin PC0 in PORTC as output pin
+	PORTC = PORTC | (1<<PC0)| (1<<PC1)| (1<<PC2)| (1<<PC3); // Set Value of PIN 0 in PORTC to 1 at the beginning (LED OFF)
+}
+void level(void)
+{
+	for(int i=1;i<50;i++)
+	{
+		PORTC ^= (1<<PC0);
+		_delay_ms(500);
+	}
+}
+

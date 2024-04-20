@@ -1,0 +1,20 @@
+/*
+ * main.c
+ *
+ *  Created on: Nov 6, 2022
+ *      Author: merna
+ */
+
+#include "APP/himi.h"
+
+int main(void) {
+	init();
+	_delay_ms(50);
+	Enter_Pass();
+	while (1) {
+
+		options();
+
+	}
+
+}

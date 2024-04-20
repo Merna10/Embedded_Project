@@ -1,0 +1,23 @@
+/*
+ * timer.c
+ *
+ *  Created on: Oct 22, 2022
+ *      Author: merna
+ */
+#include "timer.h"
+#include ""
+void Timer0_Init( Timer0_Modes mode,Timer_PRESCALAR scaler,OC0Mode_type oc_mode)
+{
+	switch (mode) {
+		case Timer0_Normal_Mode:
+
+			break;
+		default:
+			break;
+	}
+}
+void Timer0_OV_InterruptEnable(void);
+void Timer0_OV_InterruptDisable(void);
+void Timer0_OC_InterruptEnable(void);
+void Timer0_OC_InterruptDisable(void);
+

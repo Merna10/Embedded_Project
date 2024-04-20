@@ -1,0 +1,407 @@
+01:51:25 **** Build of configuration Debug for project CONTROL ****
+make all 
+Building file: ../MCAL/Timer.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"MCAL/Timer.d" -MT"MCAL/Timer.o" -c -o "MCAL/Timer.o" "../MCAL/Timer.c"
+Finished building: ../MCAL/Timer.c
+ 
+Building file: ../MCAL/gpio.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"MCAL/gpio.d" -MT"MCAL/gpio.o" -c -o "MCAL/gpio.o" "../MCAL/gpio.c"
+Finished building: ../MCAL/gpio.c
+ 
+Building file: ../MCAL/twi.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"MCAL/twi.d" -MT"MCAL/twi.o" -c -o "MCAL/twi.o" "../MCAL/twi.c"
+Finished building: ../MCAL/twi.c
+ 
+Building file: ../MCAL/uart.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"MCAL/uart.d" -MT"MCAL/uart.o" -c -o "MCAL/uart.o" "../MCAL/uart.c"
+Finished building: ../MCAL/uart.c
+ 
+Building file: ../HAL/buzzer.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"HAL/buzzer.d" -MT"HAL/buzzer.o" -c -o "HAL/buzzer.o" "../HAL/buzzer.c"
+Finished building: ../HAL/buzzer.c
+ 
+Building file: ../HAL/dc_motor.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"HAL/dc_motor.d" -MT"HAL/dc_motor.o" -c -o "HAL/dc_motor.o" "../HAL/dc_motor.c"
+Finished building: ../HAL/dc_motor.c
+ 
+Building file: ../HAL/external_eeprom.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"HAL/external_eeprom.d" -MT"HAL/external_eeprom.o" -c -o "HAL/external_eeprom.o" "../HAL/external_eeprom.c"
+Finished building: ../HAL/external_eeprom.c
+ 
+Building file: ../APP/control.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"APP/control.d" -MT"APP/control.o" -c -o "APP/control.o" "../APP/control.c"
+In file included from ../APP/control.h:12,
+                 from ../APP/control.c:7:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+In file included from ../APP/control.c:7:
+../APP/control.h:13:18: error: uart.h: No such file or directory
+../APP/control.c: In function 'start':
+../APP/control.c:12: error: 'UART_Config' undeclared (first use in this function)
+../APP/control.c:12: error: (Each undeclared identifier is reported only once
+../APP/control.c:12: error: for each function it appears in.)
+../APP/control.c:12: error: expected ';' before 'UARTconfig'
+../APP/control.c:13: warning: implicit declaration of function 'UART_init'
+../APP/control.c:13: error: 'UARTconfig' undeclared (first use in this function)
+../APP/control.c: In function 'receive_pass':
+../APP/control.c:25: warning: implicit declaration of function 'UART_recieveByte'
+../APP/control.c: In function 'check_pass':
+../APP/control.c:53: warning: implicit declaration of function 'UART_sendByte'
+make: *** [APP/control.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+01:51:40 **** Incremental Build of configuration Debug for project CONTROL ****
+make all 
+Building file: ../APP/control.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"APP/control.d" -MT"APP/control.o" -c -o "APP/control.o" "../APP/control.c"
+In file included from ../APP/control.h:12,
+                 from ../APP/control.c:7:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../APP/control.c
+ 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../APP/control.h:12,
+                 from ../main.c:8:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../main.c
+ 
+Building target: CONTROL.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,CONTROL.map -mmcu=atmega32 -o "CONTROL.elf"  ./MCAL/Timer.o ./MCAL/gpio.o ./MCAL/twi.o ./MCAL/uart.o  ./HAL/buzzer.o ./HAL/dc_motor.o ./HAL/external_eeprom.o  ./APP/control.o  ./main.o   
+Finished building target: CONTROL.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S CONTROL.elf  >"CONTROL.lss"
+Finished building: CONTROL.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 CONTROL.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    9848 bytes (30.1% Full)
+(.text + .data + .bootloader)
+
+Data:         43 bytes (2.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+01:57:23 **** Incremental Build of configuration Debug for project CONTROL ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 CONTROL.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    9848 bytes (30.1% Full)
+(.text + .data + .bootloader)
+
+Data:         43 bytes (2.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+01:57:24 **** Build of configuration Debug for project HIMI ****
+make all 
+Building file: ../MCAL/Timer.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"MCAL/Timer.d" -MT"MCAL/Timer.o" -c -o "MCAL/Timer.o" "../MCAL/Timer.c"
+Finished building: ../MCAL/Timer.c
+ 
+Building file: ../MCAL/gpio.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"MCAL/gpio.d" -MT"MCAL/gpio.o" -c -o "MCAL/gpio.o" "../MCAL/gpio.c"
+Finished building: ../MCAL/gpio.c
+ 
+Building file: ../MCAL/uart.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"MCAL/uart.d" -MT"MCAL/uart.o" -c -o "MCAL/uart.o" "../MCAL/uart.c"
+Finished building: ../MCAL/uart.c
+ 
+Building file: ../HAL/keypad.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"HAL/keypad.d" -MT"HAL/keypad.o" -c -o "HAL/keypad.o" "../HAL/keypad.c"
+Finished building: ../HAL/keypad.c
+ 
+Building file: ../HAL/lcd.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"HAL/lcd.d" -MT"HAL/lcd.o" -c -o "HAL/lcd.o" "../HAL/lcd.c"
+In file included from ../HAL/lcd.c:8:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../HAL/lcd.c: In function 'LCD_intgerToString':
+../HAL/lcd.c:160: warning: implicit declaration of function 'itoa'
+Finished building: ../HAL/lcd.c
+ 
+Building file: ../APP/hmi.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"APP/hmi.d" -MT"APP/hmi.o" -c -o "APP/hmi.o" "../APP/hmi.c"
+In file included from ../APP/hmi.c:8:
+../APP/himi.h:13:17: error: lcd.h: No such file or directory
+In file included from ../APP/himi.h:15,
+                 from ../APP/hmi.c:8:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../APP/hmi.c: In function 'init':
+../APP/hmi.c:14: warning: implicit declaration of function 'LCD_init'
+../APP/hmi.c: In function 'Enter_Pass':
+../APP/hmi.c:24: warning: implicit declaration of function 'LCD_displayStringRowColumn'
+../APP/hmi.c:25: warning: implicit declaration of function 'LCD_moveCursor'
+../APP/hmi.c:28: warning: implicit declaration of function 'LCD_DisplayChar'
+../APP/hmi.c:31: warning: implicit declaration of function 'LCD_clearScreen'
+../APP/hmi.c:57: warning: implicit declaration of function 'LCD_DisplayString'
+make: *** [APP/hmi.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+01:57:36 **** Incremental Build of configuration Debug for project CONTROL ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 CONTROL.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    9848 bytes (30.1% Full)
+(.text + .data + .bootloader)
+
+Data:         43 bytes (2.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+01:57:36 **** Incremental Build of configuration Debug for project HIMI ****
+make all 
+Building file: ../APP/hmi.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"APP/hmi.d" -MT"APP/hmi.o" -c -o "APP/hmi.o" "../APP/hmi.c"
+In file included from ../APP/himi.h:15,
+                 from ../APP/hmi.c:8:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../APP/hmi.c
+ 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../APP/himi.h:15,
+                 from ../main.c:8:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../main.c
+ 
+Building target: HIMI.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,HIMI.map -mmcu=atmega32 -o "HIMI.elf"  ./MCAL/Timer.o ./MCAL/gpio.o ./MCAL/uart.o  ./HAL/keypad.o ./HAL/lcd.o  ./APP/hmi.o  ./main.o   
+Finished building target: HIMI.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S HIMI.elf  >"HIMI.lss"
+Finished building: HIMI.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 HIMI.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   14026 bytes (42.8% Full)
+(.text + .data + .bootloader)
+
+Data:        143 bytes (7.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+02:00:21 **** Incremental Build of configuration Debug for project CONTROL ****
+make all 
+Building file: ../MCAL/Timer.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"MCAL/Timer.d" -MT"MCAL/Timer.o" -c -o "MCAL/Timer.o" "../MCAL/Timer.c"
+Finished building: ../MCAL/Timer.c
+ 
+Building file: ../MCAL/gpio.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"MCAL/gpio.d" -MT"MCAL/gpio.o" -c -o "MCAL/gpio.o" "../MCAL/gpio.c"
+Finished building: ../MCAL/gpio.c
+ 
+Building file: ../MCAL/twi.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"MCAL/twi.d" -MT"MCAL/twi.o" -c -o "MCAL/twi.o" "../MCAL/twi.c"
+Finished building: ../MCAL/twi.c
+ 
+Building file: ../MCAL/uart.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"MCAL/uart.d" -MT"MCAL/uart.o" -c -o "MCAL/uart.o" "../MCAL/uart.c"
+Finished building: ../MCAL/uart.c
+ 
+Building file: ../HAL/buzzer.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"HAL/buzzer.d" -MT"HAL/buzzer.o" -c -o "HAL/buzzer.o" "../HAL/buzzer.c"
+Finished building: ../HAL/buzzer.c
+ 
+Building file: ../HAL/dc_motor.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"HAL/dc_motor.d" -MT"HAL/dc_motor.o" -c -o "HAL/dc_motor.o" "../HAL/dc_motor.c"
+Finished building: ../HAL/dc_motor.c
+ 
+Building file: ../HAL/external_eeprom.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"HAL/external_eeprom.d" -MT"HAL/external_eeprom.o" -c -o "HAL/external_eeprom.o" "../HAL/external_eeprom.c"
+Finished building: ../HAL/external_eeprom.c
+ 
+Building file: ../APP/control.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"APP/control.d" -MT"APP/control.o" -c -o "APP/control.o" "../APP/control.c"
+In file included from ../APP/control.h:12,
+                 from ../APP/control.c:7:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../APP/control.c
+ 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../APP/control.h:12,
+                 from ../main.c:8:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../main.c
+ 
+Building target: CONTROL.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,CONTROL.map -mmcu=atmega32 -o "CONTROL.elf"  ./MCAL/Timer.o ./MCAL/gpio.o ./MCAL/twi.o ./MCAL/uart.o  ./HAL/buzzer.o ./HAL/dc_motor.o ./HAL/external_eeprom.o  ./APP/control.o  ./main.o   
+Finished building target: CONTROL.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S CONTROL.elf  >"CONTROL.lss"
+Finished building: CONTROL.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 CONTROL.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    9848 bytes (30.1% Full)
+(.text + .data + .bootloader)
+
+Data:         43 bytes (2.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+02:00:22 **** Incremental Build of configuration Debug for project HIMI ****
+make all 
+Building file: ../MCAL/Timer.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"MCAL/Timer.d" -MT"MCAL/Timer.o" -c -o "MCAL/Timer.o" "../MCAL/Timer.c"
+Finished building: ../MCAL/Timer.c
+ 
+Building file: ../MCAL/gpio.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"MCAL/gpio.d" -MT"MCAL/gpio.o" -c -o "MCAL/gpio.o" "../MCAL/gpio.c"
+Finished building: ../MCAL/gpio.c
+ 
+Building file: ../MCAL/uart.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"MCAL/uart.d" -MT"MCAL/uart.o" -c -o "MCAL/uart.o" "../MCAL/uart.c"
+Finished building: ../MCAL/uart.c
+ 
+Building file: ../HAL/keypad.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"HAL/keypad.d" -MT"HAL/keypad.o" -c -o "HAL/keypad.o" "../HAL/keypad.c"
+Finished building: ../HAL/keypad.c
+ 
+Building file: ../HAL/lcd.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"HAL/lcd.d" -MT"HAL/lcd.o" -c -o "HAL/lcd.o" "../HAL/lcd.c"
+In file included from ../HAL/lcd.c:8:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../HAL/lcd.c: In function 'LCD_intgerToString':
+../HAL/lcd.c:160: warning: implicit declaration of function 'itoa'
+Finished building: ../HAL/lcd.c
+ 
+Building file: ../APP/hmi.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"APP/hmi.d" -MT"APP/hmi.o" -c -o "APP/hmi.o" "../APP/hmi.c"
+In file included from ../APP/himi.h:15,
+                 from ../APP/hmi.c:8:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../APP/hmi.c
+ 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../APP/himi.h:15,
+                 from ../main.c:8:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../main.c
+ 
+Building target: HIMI.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,HIMI.map -mmcu=atmega32 -o "HIMI.elf"  ./MCAL/Timer.o ./MCAL/gpio.o ./MCAL/uart.o  ./HAL/keypad.o ./HAL/lcd.o  ./APP/hmi.o  ./main.o   
+Finished building target: HIMI.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S HIMI.elf  >"HIMI.lss"
+Finished building: HIMI.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 HIMI.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   14410 bytes (44.0% Full)
+(.text + .data + .bootloader)
+
+Data:        143 bytes (7.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+02:00:27 **** Incremental Build of configuration Debug for project CONTROL ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 CONTROL.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    9848 bytes (30.1% Full)
+(.text + .data + .bootloader)
+
+Data:         43 bytes (2.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+02:00:27 **** Incremental Build of configuration Debug for project HIMI ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 HIMI.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   14410 bytes (44.0% Full)
+(.text + .data + .bootloader)
+
+Data:        143 bytes (7.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 

@@ -1,0 +1,42 @@
+/*
+ * button.c
+ *
+ *  Created on: Oct 22, 2022
+ *      Author: merna
+ */
+#include "level.h"
+#include "avr/delay.h"
+
+
+enum simon_states {
+	simon_start,
+	simon_play,
+	simon_player,
+	simon_check,
+	simon_add,
+	simon_gameover
+} simon_state;
+
+uint8 simon_array[100],t=0,SEED=0,player_array[100],PT=0,CHECK,ROUND=1;
+void setup(void)
+{
+	DDRD  &= (~(1<<PD2) & ~(1<<PD4) & ~(1<<PD5) & ~(1<<PD6) & ~(1<<PD7));
+	DDRC  = DDRC | (1<<PC0)| (1<<PC1)| (1<<PC2)| (1<<PC3);  // Configure pin PC0 in PORTC as output pin
+	PORTC = PORTC | (1<<PC0)| (1<<PC1)| (1<<PC2)| (1<<PC3); // Set Value of PIN 0 in PORTC to 1 at the beginning (LED OFF)
+}
+void Timer0_Init_Normal_Mode(void)
+{
+	Timer0_Init(Timer0_Normal_Mode, PRESCALAR_CLK8, OCO_INVERTING);
+	Timer0_OV_InterruptEnable();
+	Timer0_OVF_SetCallBack(150);
+}
+void level1(void)
+{
+	Timer0_Init(Timer0_Normal_Mode, PRESCALAR_CLK8, OCO_INVERTING);
+
+	PORTC &=~(1<<PC0);
+	PORTC &=~(1<<PC1);
+	PORTC &=~(1<<PC2);
+
+}
+

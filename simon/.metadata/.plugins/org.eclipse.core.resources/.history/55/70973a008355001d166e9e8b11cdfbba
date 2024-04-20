@@ -1,0 +1,46 @@
+/*
+ * timer.c
+ *
+ *  Created on: Oct 22, 2022
+ *      Author: merna
+ */
+#include "timer.h"
+#include "avr/io.h"
+void Timer0_Init( Timer0_Modes mode,Timer_PRESCALAR scaler,OC0Mode_type oc_mode)
+{
+	switch (mode) {
+	case Timer0_Normal_Mode:
+		CLEAR_BIT(TCCR0,WGM01);
+		CLEAR_BIT(TCCR0,WGM00);
+		break;
+	case TIMER0_PHASECORRECT_MODE:
+		CLEAR_BIT(TCCR0,WGM01);
+		SET_BIT(TCCR0,WGM00);
+		break;
+	case TIMER0_CTC_MODE:
+		SET_BIT(TCCR0,WGM01);
+		CLEAR_BIT(TCCR0,WGM00);
+		break;
+	case TIMER0_FASTPWM_MODE:
+		SET_BIT(TCCR0,WGM01);
+		SET_BIT(TCCR0,WGM00);
+		break;
+	default:
+		break;
+	}
+	TCCR0|=0XF8;
+	TCCR0|=scaler;
+	switch (oc_mode) {
+		case value:
+
+			break;
+		default:
+			break;
+	}
+
+}
+void Timer0_OV_InterruptEnable(void);
+void Timer0_OV_InterruptDisable(void);
+void Timer0_OC_InterruptEnable(void);
+void Timer0_OC_InterruptDisable(void);
+

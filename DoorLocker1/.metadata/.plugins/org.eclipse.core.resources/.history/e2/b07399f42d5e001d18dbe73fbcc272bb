@@ -1,0 +1,35 @@
+/*
+ * control.h
+ *
+ *  Created on: Nov 6, 2022
+ *      Author: merna
+ */
+
+#ifndef CONTROL_H_
+#define CONTROL_H_
+#define F_CPU 8000000UL
+#include "../HAL/buzzer.h"
+#include "util/delay.h"
+#include "uart.h"
+#include "../MCAL/twi.h"
+#include "../HAL/external_eeprom.h"
+#include "../HAL/dc_motor.h"
+#include "../MCAL/Timer.h"
+
+#define SIZE 5
+#define RECEIVEPASS 0x01
+#define CHECK_PASS 2
+#define OPENDOOR 3
+#define CORRECT 4
+#define WRONG 6
+#define BUZZERON 7
+
+void TIMER1_CallBack(void);
+void start(void);
+void receive_pass(void);
+void check_pass(void);
+void rotate(void);
+
+
+
+#endif /* CONTROL_H_ */

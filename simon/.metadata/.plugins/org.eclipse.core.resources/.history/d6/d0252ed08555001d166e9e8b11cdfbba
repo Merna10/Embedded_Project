@@ -1,0 +1,103 @@
+/*
+ * timer.c
+ *
+ *  Created on: Oct 22, 2022
+ *      Author: merna
+ */
+#include "timer.h"
+#include "avr/io.h"
+#include "stdio.h"
+
+static void (*Timer0_OVF_Fptr) (void)=NULL;
+static void (*Timer0_OC_Fptr) (void)=NULLPTR;
+/*        TIMER0      */
+void Timer0_Init( Timer0_Modes mode,Timer_PRESCALAR scaler,OC0Mode_type oc_mode)
+{
+	switch (mode) {
+	case Timer0_Normal_Mode:
+		CLEAR_BIT(TCCR0,WGM01);
+		CLEAR_BIT(TCCR0,WGM00);
+		break;
+	case TIMER0_PHASECORRECT_MODE:
+		CLEAR_BIT(TCCR0,WGM01);
+		SET_BIT(TCCR0,WGM00);
+		break;
+	case TIMER0_CTC_MODE:
+		SET_BIT(TCCR0,WGM01);
+		CLEAR_BIT(TCCR0,WGM00);
+		break;
+	case TIMER0_FASTPWM_MODE:
+		SET_BIT(TCCR0,WGM01);
+		SET_BIT(TCCR0,WGM00);
+		break;
+	default:
+		break;
+	}
+	TCCR0|=0XF8;
+	TCCR0|=scaler;
+	switch (oc_mode) {
+	case OCO_DISCONNECTED:
+		CLEAR_BIT(TCCR0,COM01);
+		CLEAR_BIT(TCCR0,COM00);
+		break;
+	case OCO_TOGGLE:
+		CLEAR_BIT(TCCR0,COM01);
+		SET_BIT(TCCR0,COM00);
+		break;
+	case OCO_NON_INVERTING:
+		SET_BIT(TCCR0,COM01);
+		CLEAR_BIT(TCCR0,COM00);
+		break;
+	case OCO_INVERTING:
+		SET_BIT(TCCR0,COM01);
+		SET_BIT(TCCR0,COM00);
+		break;
+	default:
+		break;
+	}
+
+}
+void Timer0_OV_InterruptEnable(void)
+{
+	SET_BIT(TIMSK,TOIE0);
+}
+void Timer0_OV_InterruptDisable(void)
+{
+	CLEAR_BIT(TIMSK,TOIE0);
+}
+void Timer0_OC_InterruptEnable(void)
+{
+	SET_BIT(TIMSK,OCIE0);
+}
+void Timer0_OC_InterruptDisable(void)
+{
+	CLEAR_BIT(TIMSK,OCIE0);
+}
+
+void Timer0_OVF_SetCallBack(void(*LocalFptr)(void))
+{
+	Timer0_OVF_Fptr=LocalFptr;
+}
+
+void Timer0_Oc_SetCallBack(void(*LocalFptr)(void))
+{
+	Timer0_OC_Fptr=LocalFptr;
+}
+/*      TIMER1      */
+void Timer1_InputCaptureEdge(ICU_Edge_type edge);
+void Timer1_Init( Timer1_Modes mode,Timer_PRESCALAR scaler,OC1A_Mode_type oc1a_mode,OC1B_Mode_type oc1b_mode);
+
+void Timer1_ICU_InterruptEnable(void);
+void Timer1_ICU_InterruptDisable(void);
+void Timer1_OVF_InterruptEnable(void);
+void Timer1_OVF_InterruptDisable(void);
+void Timer1_OCA_InterruptEnable(void);
+void Timer1_OCA_InterruptDisable(void);
+void Timer1_OCB_InterruptEnable(void);
+void Timer1_OCB_InterruptDisable(void);
+void Timer1_OVF_SetCallBack(void(*ptr)(void));
+void Timer1_OCA_SetCallBack(void(*ptr)(void));
+void Timer1_OCB_SetCallBack(void(*ptr)(void));
+void Timer1_ICU_SetCallBack(void(*ptr)(void));
+
+

@@ -1,0 +1,50 @@
+/*
+ * button.c
+ *
+ *  Created on: Oct 22, 2022
+ *      Author: merna
+ */
+#include "level.h"
+#include "avr/delay.h"
+#include "gpio.h"
+
+const int MAX_LEVEL = 100;
+int sequence[MAX_LEVEL];
+int your_sequence[MAX_LEVEL];
+int level = 1;
+
+int velocity = 1000;
+
+void setup()
+{
+	DDRD  &= (~(1<<PD2) & ~(1<<PD4) & ~(1<<PD5) & ~(1<<PD6) & ~(1<<PD7));
+	DDRC  = DDRC | (1<<PC0)| (1<<PC1)| (1<<PC2)| (1<<PC3);  // Configure pin PC0 in PORTC as output pin
+	PORTC = PORTC | (1<<PC0)| (1<<PC1)| (1<<PC2)| (1<<PC3); // Set Value of PIN 0 in PORTC to 1 at the beginning (LED OFF)
+
+}
+void loop()
+{
+	if (level == 1)
+		generate_sequence();//generate a sequence;
+
+	if (level != 1) //If start button is pressed or you're winning
+	{
+		show_sequence();    //show the sequence
+		get_sequence();     //wait for your sequence
+	}
+}
+
+void show_sequence()
+{
+	PORTC = PORTC | (1<<PC0)| (1<<PC1)| (1<<PC2)| (1<<PC3); // Set Value of PIN 0 in PORTC to 1 at the beginning (LED OFF)
+	for (int i = 0; i < level; ++i) {
+		GPIO_writePin(PORTC, i, OUT)
+	}
+}
+
+
+
+
+
+
+

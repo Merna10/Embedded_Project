@@ -1,0 +1,62 @@
+/*
+ * button.c
+ *
+ *  Created on: Oct 22, 2022
+ *      Author: merna
+ */
+#include "level.h"
+uint8 count;
+void level1(void)
+{
+	Timer0(7000);
+	PORTC &= ~(1<<PC0);
+	_delay_ms(500);
+	PORTC |= (1<<PC0);
+	PORTC &= ~(1<<PC1);
+	_delay_ms(500);
+	PORTC |= (1<<PC1);
+	PORTC &= ~(1<<PC2);
+	_delay_ms(500);
+	PORTC |= (1<<PC2);
+	PORTC &= ~(1<<PC3);
+	_delay_ms(500);
+	PORTC = PORTC | (1<<PC0)| (1<<PC1)| (1<<PC2)| (1<<PC3); // Set Value of PIN 0 in PORTC to 1 at the beginning (LED OFF)
+	count=4;
+}
+void level2(void)
+{
+	Timer0(1010);
+	PORTC &= ~(1<<PC0);
+	_delay_ms(100);
+	PORTC &= ~(1<<PC2);
+	_delay_ms(100);
+	PORTC &= ~(1<<PC0);
+	_delay_ms(100);
+	PORTC = PORTC | (1<<PC0)| (1<<PC1)| (1<<PC2)| (1<<PC3); // Set Value of PIN 0 in PORTC to 1 at the beginning (LED OFF)
+
+}
+void level3(void)
+{
+	Timer0(900);
+	PORTC &= ~(1<<PC2);
+	_delay_ms(100);
+	PORTC &= ~(1<<PC2);
+	_delay_ms(100);
+	PORTC &= ~(1<<PC0);
+	_delay_ms(100);
+	PORTC = PORTC | (1<<PC0)| (1<<PC1)| (1<<PC2)| (1<<PC3); // Set Value of PIN 0 in PORTC to 1 at the beginning (LED OFF)
+
+}
+void level4(void)
+{
+	Timer0(1010);
+	PORTC &= ~(1<<PC3);
+	_delay_ms(100);
+	PORTC &= ~(1<<PC0);
+	_delay_ms(100);
+	PORTC &= ~(1<<PC4);
+	_delay_ms(100);
+	PORTC = PORTC | (1<<PC0)| (1<<PC1)| (1<<PC2)| (1<<PC3); // Set Value of PIN 0 in PORTC to 1 at the beginning (LED OFF)
+
+}
+

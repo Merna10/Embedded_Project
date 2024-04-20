@@ -1,0 +1,20 @@
+02:00:27 **** Incremental Build of configuration Debug for project HIMI ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 HIMI.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   14410 bytes (44.0% Full)
+(.text + .data + .bootloader)
+
+Data:        143 bytes (7.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+
+02:00:28 Build Finished. 0 errors, 0 warnings. (took 194ms)
+
